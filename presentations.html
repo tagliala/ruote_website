@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html><head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<title>ruote - presentations</title>
+<script src='/js/shCore.js'></script>
+<script src='/js/shBrushXml.js'></script>
+<script src='/js/shBrushBash.js'></script>
+<script src='/js/shBrushRuby.js'></script>
+<script src='/js/shBrushJScript.js'></script>
+<!-- %script{ :src => "/js/jquery-1.6.1.min.js" } -->
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+<link href='/css/reset.css' rel='stylesheet' type='text/css'>
+<link href='/css/shCore.css' rel='stylesheet' type='text/css'>
+<link href='/css/shThemeRuote.css' rel='stylesheet' type='text/css'>
+<link href='/css/ruote.css' rel='stylesheet' type='text/css'>
+</head><body>
+<div id='container'>
+<div id='header'>
+<div id='header-center'>
+<div id='header-left'>
+<a href='/'>
+<img src='/images/ruote.png'>
+</a>
+<div id='header-subtitle'>
+a ruby workflow engine
+</div>
+</div>
+<div id='header-right'>
+<div id='nav'>
+<span>
+<a href='/documentation.html' title='documentation'>
+doc
+</a>
+<a href='/source.html' title='source code'>
+source
+</a>
+<a href='/download.html' title='download'>
+download
+</a>
+<a class='nihongo' href='/ja.html' title='日本語'>
+日本語
+</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div id='content'>
+<div id='content-center'>
+<div id='sidebar'><h3 onclick='document.location = &quot;/documentation.html&quot;' style='cursor: pointer'>
+Documentation
+</h3>
+<ul>
+<li>
+<a href='/exp/add_branches.html'>
+add_branches expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/add_branches.html'>
+add_branches
+</a>
+</li>
+<li>
+<a href='/exp/add_branches.html'>
+add_branch
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/apply.html'>
+apply expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/apply.html'>
+apply
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/await.html'>
+await expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/await.html'>
+await
+</a>
+</li>
+</ul>
+<li>
+<a href='/part/block_participant.html'>
+block_participant
+</a>
+</li>
+<li>
+<a href='/exp/cancel_process.html'>
+cancel_process expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/cancel_process.html'>
+cancel_process
+</a>
+</li>
+<li>
+<a href='/exp/cancel_process.html'>
+terminate
+</a>
+</li>
+<li>
+<a href='/exp/cancel_process.html'>
+kill_process
+</a>
+</li>
+</ul>
+<li>
+<a href='/part/code_participant.html'>
+code_participant
+</a>
+</li>
+<li>
+<a href='/exp/command.html'>
+command expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/command.html'>
+skip
+</a>
+</li>
+<li>
+<a href='/exp/command.html'>
+back
+</a>
+</li>
+<li>
+<a href='/exp/command.html'>
+jump
+</a>
+</li>
+<li>
+<a href='/exp/command.html'>
+rewind
+</a>
+</li>
+<li>
+<a href='/exp/command.html'>
+continue
+</a>
+</li>
+<li>
+<a href='/exp/command.html'>
+break
+</a>
+</li>
+<li>
+<a href='/exp/command.html'>
+stop
+</a>
+</li>
+<li>
+<a href='/exp/command.html'>
+over
+</a>
+</li>
+<li>
+<a href='/exp/command.html'>
+reset
+</a>
+</li>
+</ul>
+<li>
+<a href='/common_attributes.html'>
+common attributes
+</a>
+</li>
+<li>
+<a href='/exp/concurrence.html'>
+concurrence expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/concurrence.html'>
+concurrence
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/concurrent_iterator.html'>
+concurrent_iterator expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/concurrent_iterator.html'>
+concurrent_iterator
+</a>
+</li>
+<li>
+<a href='/exp/concurrent_iterator.html'>
+citerator
+</a>
+</li>
+</ul>
+<li>
+<a href='/conditions.html'>
+conditions
+</a>
+</li>
+<li>
+<a href='/configuration.html'>
+configuration
+</a>
+</li>
+<li>
+<a href='/exp/cron.html'>
+cron expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/cron.html'>
+cron
+</a>
+</li>
+<li>
+<a href='/exp/cron.html'>
+every
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/cursor.html'>
+cursor expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/cursor.html'>
+cursor
+</a>
+</li>
+<li>
+<a href='/exp/cursor.html'>
+loop
+</a>
+</li>
+<li>
+<a href='/exp/cursor.html'>
+repeat
+</a>
+</li>
+</ul>
+<li>
+<a href='/part/decision_participant.html'>
+decision_participant
+</a>
+</li>
+<li>
+<a href='/exp/define.html'>
+define expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/define.html'>
+define
+</a>
+</li>
+<li>
+<a href='/exp/define.html'>
+process_definition
+</a>
+</li>
+<li>
+<a href='/exp/define.html'>
+workflow_definition
+</a>
+</li>
+</ul>
+<li>
+<a href='/documentation.html'>
+documentation
+</a>
+</li>
+<li>
+<a href='/dollar.html'>
+dollar notation
+</a>
+</li>
+<li>
+<a href='/download.html'>
+download
+</a>
+</li>
+<li>
+<a href='/exp/echo.html'>
+echo expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/echo.html'>
+echo
+</a>
+</li>
+</ul>
+<li>
+<a href='/part/engine_participant.html'>
+engine_participant
+</a>
+</li>
+<li>
+<a href='/exp/equals.html'>
+equals expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/equals.html'>
+equals
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/error.html'>
+error expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/error.html'>
+error
+</a>
+</li>
+</ul>
+<li>
+<a href='/expressions.html'>
+expressions
+</a>
+</li>
+<li>
+<a href='/exp/filter.html'>
+filter expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/filter.html'>
+filter
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/forget.html'>
+forget expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/forget.html'>
+forget
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/given.html'>
+given expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/given.html'>
+given
+</a>
+</li>
+</ul>
+<li>
+<a href='/glossary.html'>
+glossary
+</a>
+</li>
+<li>
+<a href='/exp/if.html'>
+if expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/if.html'>
+if
+</a>
+</li>
+</ul>
+<li>
+<a href='/implementing_a_storage.html'>
+implementing a storage
+</a>
+</li>
+<li>
+<a href='/implementing_participants.html'>
+implementing participants
+</a>
+</li>
+<li>
+<a href='/exp/inc.html'>
+inc expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/inc.html'>
+inc
+</a>
+</li>
+<li>
+<a href='/exp/inc.html'>
+dec
+</a>
+</li>
+<li>
+<a href='/exp/inc.html'>
+increment
+</a>
+</li>
+<li>
+<a href='/exp/inc.html'>
+decrement
+</a>
+</li>
+<li>
+<a href='/exp/inc.html'>
+push
+</a>
+</li>
+<li>
+<a href='/exp/inc.html'>
+pop
+</a>
+</li>
+</ul>
+<li>
+<a href='/'>
+index
+</a>
+</li>
+<li>
+<a href='/exp/iterator.html'>
+iterator expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/iterator.html'>
+iterator
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/let.html'>
+let expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/let.html'>
+let
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/listen.html'>
+listen expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/listen.html'>
+listen
+</a>
+</li>
+<li>
+<a href='/exp/listen.html'>
+receive
+</a>
+</li>
+<li>
+<a href='/exp/listen.html'>
+intercept
+</a>
+</li>
+</ul>
+<li>
+<a href='/lists.html'>
+lists
+</a>
+</li>
+<li>
+<a href='/part/local_participant.html'>
+local_participant
+</a>
+</li>
+<li>
+<a href='/exp/lose.html'>
+lose expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/lose.html'>
+lose
+</a>
+</li>
+</ul>
+<li>
+<a href='/part/no_op_participant.html'>
+no_op_participant
+</a>
+</li>
+<li>
+<a href='/noisy.html'>
+noisy output
+</a>
+</li>
+<li>
+<a href='/exp/noop.html'>
+noop expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/noop.html'>
+noop
+</a>
+</li>
+</ul>
+<li>
+<a href='/part/null_participant.html'>
+null_participant
+</a>
+</li>
+<li>
+<a href='/exp/on_error.html'>
+on_error expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/on_error.html'>
+on_error
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/once.html'>
+once expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/once.html'>
+once
+</a>
+</li>
+<li>
+<a href='/exp/once.html'>
+when
+</a>
+</li>
+<li>
+<a href='/exp/once.html'>
+as_soon_as
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/participant.html'>
+participant expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/participant.html'>
+participant
+</a>
+</li>
+</ul>
+<li>
+<a href='/part_implementations.html'>
+participant implementations
+</a>
+</li>
+<li class='current'>
+<a href='/presentations.html'>
+presentations
+</a>
+</li>
+<li>
+<a href='/process_administration.html'>
+process administration
+</a>
+</li>
+<li>
+<a href='/definitions.html'>
+process definitions
+</a>
+</li>
+<li>
+<a href='/process_observation.html'>
+process observation
+</a>
+</li>
+<li>
+<a href='/participants.html'>
+process participants
+</a>
+</li>
+<li>
+<a href='/exp/read.html'>
+read expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/read.html'>
+read
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/redo.html'>
+redo expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/redo.html'>
+redo
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/ref.html'>
+ref expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/ref.html'>
+ref
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/registerp.html'>
+registerp expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/registerp.html'>
+registerp
+</a>
+</li>
+</ul>
+<li>
+<a href='/rel.html'>
+rel values for ruote-http / ruote-kit links
+</a>
+</li>
+<li>
+<a href='/exp/reserve.html'>
+reserve expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/reserve.html'>
+reserve
+</a>
+</li>
+</ul>
+<li>
+<a href='/resources.html'>
+resources
+</a>
+</li>
+<li>
+<a href='/exp/restore.html'>
+restore expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/restore.html'>
+restore
+</a>
+</li>
+<li>
+<a href='/exp/restore.html'>
+set_fields
+</a>
+</li>
+</ul>
+<li>
+<a href='/part/rev_participant.html'>
+rev_participant
+</a>
+</li>
+<li>
+<a href='/users.html'>
+ruote users
+</a>
+</li>
+<li>
+<a href='/sample_workflow_run.html'>
+sample workflow run
+</a>
+</li>
+<li>
+<a href='/exp/save.html'>
+save expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/save.html'>
+save
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/sequence.html'>
+sequence expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/sequence.html'>
+sequence
+</a>
+</li>
+<li>
+<a href='/exp/sequence.html'>
+let
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/set.html'>
+set expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/set.html'>
+rset
+</a>
+</li>
+<li>
+<a href='/exp/set.html'>
+set
+</a>
+</li>
+<li>
+<a href='/exp/set.html'>
+unset
+</a>
+</li>
+</ul>
+<li>
+<a href='/part/smtp_participant.html'>
+smtp_participant
+</a>
+</li>
+<li>
+<a href='/source.html'>
+source
+</a>
+</li>
+<li>
+<a href='/exp/stall.html'>
+stall expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/stall.html'>
+stall
+</a>
+</li>
+</ul>
+<li>
+<a href='/part/storage_participant.html'>
+storage_participant
+</a>
+</li>
+<li>
+<a href='/exp/subprocess.html'>
+subprocess expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/subprocess.html'>
+subprocess
+</a>
+</li>
+</ul>
+<li>
+<a href='/testing_participants.html'>
+testing participants
+</a>
+</li>
+<li>
+<a href='/testing_processes.html'>
+testing processes
+</a>
+</li>
+<li>
+<a href='/exp/that.html'>
+that expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/that.html'>
+that
+</a>
+</li>
+<li>
+<a href='/exp/that.html'>
+of
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/undo.html'>
+undo expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/undo.html'>
+undo
+</a>
+</li>
+<li>
+<a href='/exp/undo.html'>
+cancel
+</a>
+</li>
+<li>
+<a href='/exp/undo.html'>
+kill
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/unregisterp.html'>
+unregisterp expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/unregisterp.html'>
+unregisterp
+</a>
+</li>
+</ul>
+<li>
+<a href='/vars_and_fields.html'>
+variables and fields
+</a>
+</li>
+<li>
+<a href='/exp/wait.html'>
+wait expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/wait.html'>
+wait
+</a>
+</li>
+<li>
+<a href='/exp/wait.html'>
+sleep
+</a>
+</li>
+</ul>
+<li>
+<a href='/with_rails.html'>
+with rails
+</a>
+</li>
+<li>
+<a href='/patterns.html'>
+workflow control patterns
+</a>
+</li>
+<li>
+<a href='/ja.html'>
+日本語
+</a>
+</li>
+</ul>
+<h3>
+More
+</h3>
+<ul class='contact'>
+<li>
+<a href='https://github.com/jmettraux/ruote/tree/master/quickstart'>
+quickstart
+</a>
+</li>
+<li class='current'>
+<a href='/presentations.html'>
+presentations
+</a>
+</li>
+<li>
+<a href='/resources.html'>
+resources
+</a>
+</li>
+<li>
+<a href='/users.html'>
+users
+</a>
+</li>
+</ul>
+<h3>
+Meta
+</h3>
+<ul class='contact'>
+<li>
+<a href='/source.html'>
+source
+</a>
+</li>
+<li>
+<a href='/download.html'>
+download
+</a>
+</li>
+<li>
+<a href='http://jmettraux.github.com'>
+blog
+</a>
+</li>
+<li>
+<a href='/lists.html'>
+mailing list
+</a>
+</li>
+<li>
+<a href='http://ruote-ci.s3.amazonaws.com/ci.html'>
+continuous integration
+</a>
+</li>
+<li>
+<a href='http://ruote-irclogs.s3.amazonaws.com/logs.html'>
+IRC
+</a>
+</li>
+<li>
+<a href='https://www.ohloh.net/p/ruote/'>
+on ohloh
+</a>
+</li>
+</ul>
+<h3>
+<span>
+Search
+</span>
+</h3>
+<ul class='contact'>
+<li>
+<form action='http://www.google.com/search' method='GET'>
+<input id='qq' name='qq' style='' type='text'>
+<input id='q' name='q' type='hidden'>
+<input onclick='adjustSearch();' type='submit' value='search'>
+</form>
+</li>
+</ul>
+<script>
+  function adjustSearch() {
+    $('#q').val($('#qq').val() + ' site:http://ruote.rubyforge.org');
+  }
+</script>
+</div>
+<div id='content-main'>
+<h2>presentations</h2>
+<h3 id="rubyfuza">ruote</h3>
+<p><a href="http://rubyfuza.org/">RubyFuza 2011</a> <a href="http://www.slideshare.net/kenneth.kalmer/ruote">ruote presentation</a> by <a href="http://www.opensourcery.co.za/">Kenneth Kalmer</a></p>
+<p><object type='application/x-shockwave-flash' wmode='transparent' data='http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=ruote-rubyfuza-110203073523-phpapp01&stripped_title=ruote&userName=kenneth.kalmer' width='595' height='487'><param name='movie' value='http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=ruote-rubyfuza-110203073523-phpapp01&stripped_title=ruote&userName=kenneth.kalmer' /><param name='allowFullScreen' value='true' /><param name='allowScriptAccess' value='always' /></object></p>
+<h3 id="houston_rb">ruote, a Ruby workflow engine</h3>
+<p><a href="http://jmettraux.wordpress.com/2010/08/16/houston-rb-ruote-wes-gamble/">Houston.rb ruote presentation</a> by <a href="http://www.linkedin.com/in/wesgamble">Wes Gamble</a></p>
+<p><object type='application/x-shockwave-flash' wmode='transparent' data='http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=ruote-100812115339-phpapp01' width='595' height='487'><param name='movie' value='http://static.slidesharec
+dn.com/swf/ssplayer2.swf?doc=ruote-100812115339-phpapp01' />&lt;param name<br />
+=&#8216;allowFullScreen&#8217; value=&#8216;true&#8217; /&gt;<param name='allowScriptAccess' value='always'
+ /></object></p>
+<h3 id="twenty_minutes">ruote in 20 minutes</h3>
+<p><a href="http://www.opensourcery.co.za/2009/08/25/ruote-in-20-minutes-video/">ruote in 20 minutes</a> by <a href="http://github.com/kennethkalmer">Kenneth Kalmer</a></p>
+<p><object type='application/x-shockwave-flash' wmode='transparent' data='http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=20090303-ruote-090304024427-phpapp01' width='595' height='487'><param name='movie' value='http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=20090303-ruote-090304024427-phpapp01' /><param name='allowFullScreen' value='true' /><param name='allowScriptAccess' value='always' /></object></p>
+<h3 id="towards_twozero">towards ruote 2.0</h3>
+<p>As presented by Nando Solo during <a href="http://jmettraux.wordpress.com/2009/10/15/ruedas-y-cervezas-first-instance/">Ruedas y Cervezas</a></p>
+<p><object type='application/x-shockwave-flash' wmode='transparent' data='http://static.slideshare.net/swf/ssplayer2.swf?id=2226153&#038;doc=towardsruote20-091015003740-phpapp02' width='595' height='487'><param name='movie' value='http://static.slideshare.net/swf/ssplayer2.swf?id=2226153&#038;doc=towardsruote20-091015003740-phpapp02' /><param name='allowFullScreen' value='true' /><param name='allowScriptAccess' value='always' /></object></p>
+</div>
+</div>
+</div>
+</div>
+<div id='footer'>
+<div id='footer-center'>
+<p>
+<span id='footer-left'>
+<a href='https://github.com/jmettraux/ruote_website/issues'>doc issue reporting</a>
+|
+<a href='https://github.com/jmettraux/ruote_website'>doc source</a>
+| created with
+<a href='http://nanoc.stoneship.org'>nanoc</a>
+and
+<a href='http://alexgorbatchev.com/SyntaxHighlighter/'>syntax highlighter</a>
+</span>
+<span id='footer-right'>
+&copy; 2005-2013 the ruote team
+</span>
+</p>
+</div>
+</div>
+<script>
+  SyntaxHighlighter.all();
+  
+  if (location.hostname != 'localhost' && location.hostname != '127.0.0.1') {
+  
+    // gauges
+  
+    var _gauges = _gauges || [];
+    (function() {
+      var t   = document.createElement('script');
+      t.type  = 'text/javascript';
+      t.async = true;
+      t.id    = 'gauges-tracker';
+      t.setAttribute('data-site-id', '50454d13f5a1f57e4200001b');
+      t.src = '//secure.gaug.es/track.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(t, s);
+    })();
+  
+    // ga
+  
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-138748-2']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  }
+</script>
+</body>
+</html>
