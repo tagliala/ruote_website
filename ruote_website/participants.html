@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html><head>
 <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
-<title>ruote - testing participants</title>
-<script src='/js/shCore.js'></script>
-<script src='/js/shBrushXml.js'></script>
-<script src='/js/shBrushBash.js'></script>
-<script src='/js/shBrushRuby.js'></script>
-<script src='/js/shBrushJScript.js'></script>
+<title>ruote - process participants</title>
+<script src='/ruote_website/js/shCore.js'></script>
+<script src='/ruote_website/js/shBrushXml.js'></script>
+<script src='/ruote_website/js/shBrushBash.js'></script>
+<script src='/ruote_website/js/shBrushRuby.js'></script>
+<script src='/ruote_website/js/shBrushJScript.js'></script>
 <!-- %script{ :src => "/js/jquery-1.6.1.min.js" } -->
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
-<link href='/css/reset.css' rel='stylesheet' type='text/css'>
-<link href='/css/shCore.css' rel='stylesheet' type='text/css'>
-<link href='/css/shThemeRuote.css' rel='stylesheet' type='text/css'>
-<link href='/css/ruote.css' rel='stylesheet' type='text/css'>
+<link href='/ruote_website/css/reset.css' rel='stylesheet' type='text/css'>
+<link href='/ruote_website/css/shCore.css' rel='stylesheet' type='text/css'>
+<link href='/ruote_website/css/shThemeRuote.css' rel='stylesheet' type='text/css'>
+<link href='/ruote_website/css/ruote.css' rel='stylesheet' type='text/css'>
 </head><body>
 <div id='container'>
 <div id='header'>
 <div id='header-center'>
 <div id='header-left'>
-<a href='/'>
-<img src='/images/ruote.png'>
+<a href='/ruote_website'>
+<img src='/ruote_website/images/ruote.png'>
 </a>
 <div id='header-subtitle'>
 a ruby workflow engine
@@ -28,13 +28,13 @@ a ruby workflow engine
 <div id='header-right'>
 <div id='nav'>
 <span>
-<a href='/documentation.html' title='documentation'>
+<a href='/ruote_website/documentation.html' title='documentation'>
 doc
 </a>
-<a href='/source.html' title='source code'>
+<a href='/ruote_website/source.html' title='source code'>
 source
 </a>
-<a href='/download.html' title='download'>
+<a href='/ruote_website/download.html' title='download'>
 download
 </a>
 <a class='nihongo' href='/ja.html' title='日本語'>
@@ -618,7 +618,7 @@ process definitions
 process observation
 </a>
 </li>
-<li>
+<li class='current'>
 <a href='/ruote_website/participants.html'>
 process participants
 </a>
@@ -815,7 +815,7 @@ subprocess
 </a>
 </li>
 </ul>
-<li class='current'>
+<li>
 <a href='/ruote_website/testing_participants.html'>
 testing participants
 </a>
@@ -1000,246 +1000,119 @@ Search
 </script>
 </div>
 <div id='content-main'>
-<h2>testing participants</h2>
-<p>testing participant implementations.</p>
-<p>There are two ways to test participants: <a href="#in_isolation">in isolation</a> and <a href="#in_flow">in flow</a>.</p>
-<p>The &#8220;in isolation&#8221; way is to simply setup the participant and exercise it. In the &#8220;in flow&#8221; way, the participant is exercised via a transient (in-memory HashStorage) ruote engine and a minimal flow.</p>
-<hr/>
-<h3 id="in_isolation">testing in isolation</h3>
-<p>This piece of documentation was contributed by <a href="https://github.com/coffeeaddict">Hartog C. de Mik</a></p>
-<h4>Introduction</h4>
-<p>Testing a participant is gory-detail-stuff. You must know a lot about the internals of Ruote.<br />
-Because in order to &#8216;test&#8217; a participant, we have to mimic the environment the participant lives and is executed in.</p>
-<h4>Setup</h4>
-<p>Since we are isolating the participant in our experiment^W&#8230; tests we have to prevent the participant from communicating with Ruote. In order to do so we have to replace the #reply function with an own singleton.</p>
+<h2>participants</h2>
+<p>Participants are handed workitems by the ruote engine and are expected to perform a task with them. Usually, some piece of information found in the payload of the workitem defines what/which task should be performed.</p>
 <pre class="brush: ruby">
-participant = Participant.new
-def participant.reply; end
+  Ruote.process_definition :name =&gt; 'accident investigation case' do
+    sequence do
+      concurrence do
+        participant 'reporter 1', :task =&gt; 'gather info on accident site'
+        participant 'reporter 2', :task =&gt; 'gather info about customer'
+      end
+      participant 'hq', :task =&gt; 'handle case'
+    end
+  end
 </pre>
-<p>The singleton-method reply just has to do &#8230; nothing (certainly not reply to the the engine!)</p>
-<h4>Create a workitem</h4>
-<p>Loading a workitem is pretty simple, just instantiate a Ruote::Workitem and load it with the proper values for your tests.</p>
-<h5>Fields</h5>
-<pre class="brush: ruby">
-wi = Ruote::Workitem.new( 'fields' =&gt; { 'my_field' =&gt; 'my value' } )
-</pre>
-<h5>Params</h5>
-<p>To get the parameters (as given in your process definition), you will have to place them within the #fields hash.</p>
-<pre class="brush: ruby">
-wi = Ruote::Workitem.new(
-  'fields' =&gt; {
-    'my_field' =&gt; 'my value'
-    'params' =&gt; {
-      'passed_from_pdef' =&gt; 'not really, no...'
-    },
-  })
-</pre>
-<h4>Injecting a workitem</h4>
-<p>Since we want to emulate, or mimic, the environment Ruote builds around our participants, we cannot simply call #on_workitem, we have to do what ruote does.</p>
-<pre class="brush: ruby">
-it "should receive the workitem" do
-  wi = Ruote::Workitem.new( 'fields' =&gt; { 'my_field' =&gt; 'my value' } )
-  subject._on_workitem(wi)
-  subject.workitem.should == wi
-end
-</pre>
-<p>Or, for old(er) ruote installments</p>
-<pre class="brush: ruby">
-it "should consume the workitem" do
-  wi = Ruote::Workitem.new( 'fields' =&gt; { 'my_field' =&gt; 'my value' } )
-  subject.expects(:consume).with(wi)
-  subject._consume(wi)
-end
-</pre>
-<h4>Capturing results</h4>
-<h5>Workitem updates</h5>
-<p>Since you have overridden reply (with nothing) you can just test participant.workitem and expect it to have the latest-greatest.</p>
-<h5>Side-effects</h5>
-<p>How you test your side-effects is up to you&#8230;</p>
-<h4>The StorageParticipant</h4>
-<p>If you have subclassed the storage participant, the rules change a little</p>
-<h5>Setup</h5>
-<p>an order for the storage participant to function properly, an instance of the ruote engine should be supplied</p>
-<pre class="brush: ruby">
-engine      = Ruote::Dashboard.new(Ruote::HashStorage.new())
-participant = MyStorageParticipant(engine)
-</pre>
-<h5>Load a workitem</h5>
-<p>First thing the the StorageParticipant sub-class does (or should do) in #on_workitem is call #super &#8211; this will wreak havoc, unless you make sure that you have a workitem with a (valid) fei</p>
-<pre class="brush: ruby">
-workitem = RuoteWorkitem.new(
-  'fei' =&gt; {
-    'expid' =&gt; '0',
-    'subid' =&gt; 'abc123',
-    'wfid' =&gt; 'some-wfid-could-be-anything',
-    'engine_id' =&gt; 'engine' },
-  'fields' =&gt; {
-    'age_of_the_captain' =&gt; 32 }
-)
-</pre>
-<h4>Disclaimer</h4>
+<p>In this process definition example, the 2 reporter participants are handed each a workitem by the engine and once their work got done, a merged single workitem continues in the flow and is presented to the &#8216;hq&#8217; participant.</p>
+<p>Note that no information about the actual details of the participants are leaking to the process definition. By reading the definition, the only clue we get is that participant replies are expected in order for the process run to be productive.</p>
+<p>Nothing was specified about how workitems are to be dispatched to participants. Does it occur via <span class="caps">SMTP</span> ? Via a webhook ? Is the workitem placed in a database for consultation by the real participants ? Is the workitem printed and sent tied to a pigeon carrier ? The process definition yields no clue about that.</p>
+<p>How this page flows :</p>
 <ul>
-	<li>The code examples provided are not runnable out-off-the-box and are meant has a hook for you to start your work on.</li>
-	<li>The code examples below are RSpec specific and assume the use of Mocha as a mocking framework.</li>
+	<li><a href="#registering">registering participants</a> : get the engine to know about them
+	<ul>
+		<li><a href="#resolution">how participants are resolved</a> : order matters</li>
+		<li><a href="#r_participant">engine#register_participant</a> : the original way of registering participants</li>
+		<li><a href="#r_block" title="&amp;block">engine#register</a> : a nice notation brought by <a href="https://github.com/tosch">Torsten</a></li>
+		<li><a href="#r_list">engine#participant_list=</a> : registering participants as a list (very similar to using the register(&amp;block) method</li>
+	</ul></li>
+	<li><a href="#threads">participants and threads</a> : should ruote create a thread for each participant dispatch ?</li>
 </ul>
-<h3>Code samples</h3>
-<p>participant implementation:</p>
+<hr />
+<h3 id="registering">registering participants</h3>
+<p>Process definitions are in most cases pointed at to the engine right at the launch time. The engine parses the definition and creates a process instance.</p>
+<p>Participant implementations are usually bound in the engine when it is started. The term is to &#8220;register a participant in the engine&#8221;. The engine is then equipped with a directory of participants that it looks up by name when a participant expression is applied, signifying that its workitem has to be despatched to a real participant.</p>
+<p>A bit of history, initially OpenWFE had no participant registration. The participant list was an <span class="caps">XML</span> document mapping regular expression to participant implementation. When porting OpenWFE to ruby, I went for the simple Engine#register_participant method, with a participant list held in memory.</p>
+<p>Now since ruote 2.1, its multiple workers and engines sharing a storage, the participant list is persisted as well. That means that registering participant once is sufficient, that also means you could have &#8220;leftovers&#8221;, participants registered but not more needed.</p>
+<p>Two techniques against leftovers : register only the first time (when the participant list is empty) or register all at once (see <a href="#r_list">Engine#participant_list=</a> a few paragraphs below)</p>
+<p>Here are the methods available to register participants :</p>
+<table>
+	<tr>
+		<th>method</th>
+		<th>notes</th>
+		<th>warning</th>
+	</tr>
+	<tr>
+		<td><a href="#r_participant">engine#register_participant</a></td>
+		<td>registers one by one</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><a href="#r_block" title="&amp;block">engine#register</a></td>
+		<td>registers in one go, clears previous list (unless :clear =&gt; false)</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><a href="#r_list">engine#participant_list=</a></td>
+		<td>registers in one go, clears previous list</td>
+		<td>low-level</td>
+	</tr>
+</table>
+<p>Probably, if you have a &#8220;static&#8221; list of participants, <a href="#r_block" title="&amp;block">engine#register</a> is the best way. If you add participants here and there <a href="#r_participant">engine#register_participant</a> might be OK, unless you want more control, implement some business logic for adding participants that wraps <a href="#r_list">engine#participant_list=</a>.</p>
+<h4 id="resolution">how participants are resolved (looked up)</h4>
+<p>The participants are registered in a list.</p>
+<p>When ruote has to deliver work to a participant, it looks it up in the participant list, starting with the first entry whose regular expression matches the participant name.</p>
 <pre class="brush: ruby">
-require 'open-uri'
+  engine.register_participant 'user_alice', Acme::ThisParticipant
+  engine.register_participant /^user_/, Acme::ThatParticipant
 
-class MyParticipant &lt; Ruote::Participant
-
-  def on_workitem
-    begin
-      OpenURI.open_uri(workitem.fields['url'])
-    rescue SocketError =&gt; error
-      workitem.fields['error'] = "#{error.class}: #{error.message}"
-    else
-      workitem.fields['visited'] = true
-    end
+  pdef = Ruote.process_definition do
+    user_alice
+    user_bob
   end
-end
+
+  engine.launch(pdef)
 </pre>
-<p>spec/participants/my_participant.rb</p>
+<p>Thus user_alice will be handled by Acme::ThisParticipant, while user_bob will be handled by Acme::ThatParticipant.</p>
+<p>The <a href="implementing_participants.html#accept">accept?</a> method of the participant, if present, plays its role. Thus</p>
 <pre class="brush: ruby">
-
-require 'spec_helper'
-
-describe MyParticipant do
-
-  subject { setup_participant MyParticipant }
-
-  it "visits successfully the target URL" do
-
-    subject._on_workitem new_workitem(
-      fields: { 'url' =&gt; 'http://ruote.rubyforge.org/' })
-
-    subject.workitem.fields['visited'].should be_true
+  class Acme::ThisParticipant
+    include Ruote::LocalParticipant
+    def consume(workitem)
+      # ...
+    end
+    def accept?(workitem)
+      workitem.fields['domain'] == 'marketing'
+    end
   end
-end
 </pre>
-<p>spec/support/ruote_helpers.rb</p>
+<p>Alice workitems will only be handled by Acme::ThisParticipant if they are for the &#8216;marketing&#8217; domain, if not they are handled by Acme::ThatParticipant (as specified when registering).</p>
+<h4 id="r_participant">engine#register_participant</h4>
+<p>The first way to register participants in ruote is to call the engine&#8217;s register_participant method.</p>
 <pre class="brush: ruby">
-module RuoteHelpers
-
-  def engine
-    @engine ||= RuoteKit.engine # (or some other setup)
-  end
-
-  def setup_storage_participant(klass)
-
-    participant = klass.new(engine)
-
-    def participant.update(workitem)
-      self.workitem = workitem
-    end
-
-    participant
-  end
-
-  def setup_participant(klass)
-
-    participant = klass.new()
-
-    def participant.reply
-      # catching the reply - it should not do anything
-    end
-
-    participant
-  end
-
-  def new_workitem(opts)
-
-    opts = Ruote.keys_to_s(opts)
-
-    if opts['params']
-      opts['fields']['params'] ||= {}
-      opts['fields']['params'].merge!(opts.delete('params'))
-    end
-
-    Ruote::Workitem.new(opts.merge(
-     'fei' =&gt; {
-        'expid'     =&gt; '0',
-        'subid'     =&gt; 'abc123',
-        'wfid'      =&gt; engine.context.wfidgen.generate,
-        'engine_id' =&gt; 'engine',
-      }
-    ))
-  end
-end
-
-RSpec.configure do |config|
-  config.include RuoteHelpers
-end
+  engine.register_participant 'reporter 1', Ruote::StorageParticipant
 </pre>
-<hr/>
-<h3 id="in_flow">testing in flow</h3>
-<p><span class="caps">TODO</span></p>
-<h3 id="links">links</h3>
-<ul>
-	<li><a href="http://groups.google.com/group/openwferu-users/browse_thread/thread/707c3ee1ecc14097">some pointers on the mailing list</a></li>
-	<li><a href="https://gist.github.com/4546918">original documentation by Hartog de Mik</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div id='footer'>
-<div id='footer-center'>
-<p>
-<span id='footer-left'>
-<a href='https://github.com/jmettraux/ruote_website/issues'>doc issue reporting</a>
-|
-<a href='https://github.com/jmettraux/ruote_website'>doc source</a>
-| created with
-<a href='http://nanoc.stoneship.org'>nanoc</a>
-and
-<a href='http://alexgorbatchev.com/SyntaxHighlighter/'>syntax highlighter</a>
-</span>
-<span id='footer-right'>
-&copy; 2005-2013 the ruote team
-</span>
-</p>
-</div>
-</div>
-<script>
-  SyntaxHighlighter.all();
-  
-  if (location.hostname != 'localhost' && location.hostname != '127.0.0.1') {
-  
-    // gauges
-  
-    var _gauges = _gauges || [];
-    (function() {
-      var t   = document.createElement('script');
-      t.type  = 'text/javascript';
-      t.async = true;
-      t.id    = 'gauges-tracker';
-      t.setAttribute('data-site-id', '50454d13f5a1f57e4200001b');
-      t.src = '//secure.gaug.es/track.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(t, s);
-    })();
-  
-    // ga
-  
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-138748-2']);
-    _gaq.push(['_trackPageview']);
-  
-    (function() {
-      var ga = document.createElement('script');
-      ga.type = 'text/javascript';
-      ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(ga, s);
-    })();
-  }
-</script>
-</body>
-</html>
- engine.register_participant 'engineering', Acme::EngineerParticipant
+<p>Here, the participant named &#8220;reporter 1&#8221; is registered in the engine. We trust the engine with the actual instantiation and thus pass only the class : Ruote::StorageParticipant (this participant implementation places workitems in the storage).</p>
+<p>In order to avoid writing too much code for binding participants, it&#8217;s OK to leverage <strong>regular expressions</strong>. Here is something that can cope with &#8216;reporter 1&#8217; and &#8216;reporter 2&#8217; and many more :</p>
+<pre class="brush: ruby">
+  engine.register_participant /^reporter /, Ruote::StorageParticipant
+</pre>
+<p>Don&#8217;t worry about the participant implementation mixing the workitems,</p>
+<pre class="brush: ruby">
+  concurrence do
+    participant 'reporter 1', :task =&gt; 'gather info on accident site'
+    participant 'reporter 2', :task =&gt; 'gather info about customer'
+  end
+</pre>
+<p>in our example, the attribute &#8216;participant&#8217; of the top workitem while be &#8216;reporter 1&#8217; vs &#8216;reporter 2&#8217; for the bottom one, though the same participant implementation consumed the workitem.</p>
+<p><strong><span class="caps">NOTE</span></strong> : by default, engine#register_participant will delete any previously registered participant with the same regex and place the new participant at the end of the list.</p>
+<p>Thus</p>
+<pre class="brush: ruby">
+  engine.register_participant 'engineering', Ruote::StorageParticipant
+  engine.register_participant 'marketing', Ruote::StorageParticipant
+
+  # and then later ...
+
+  engine.register_participant 'engineering', Acme::EngineerParticipant
 </pre>
 <p>results in a participant list with 2 participants, &#8216;marketing&#8217; then &#8216;engineering&#8217;.</p>
 <p>The :position option may help :</p>
@@ -1404,38 +1277,6 @@ and
 </div>
 <script>
   SyntaxHighlighter.all();
-  
-  if (location.hostname != 'localhost' && location.hostname != '127.0.0.1') {
-  
-    // gauges
-  
-    var _gauges = _gauges || [];
-    (function() {
-      var t   = document.createElement('script');
-      t.type  = 'text/javascript';
-      t.async = true;
-      t.id    = 'gauges-tracker';
-      t.setAttribute('data-site-id', '50454d13f5a1f57e4200001b');
-      t.src = '//secure.gaug.es/track.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(t, s);
-    })();
-  
-    // ga
-  
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-138748-2']);
-    _gaq.push(['_trackPageview']);
-  
-    (function() {
-      var ga = document.createElement('script');
-      ga.type = 'text/javascript';
-      ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(ga, s);
-    })();
-  }
 </script>
 </body>
 </html>

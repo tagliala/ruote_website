@@ -2,24 +2,24 @@
 <html><head>
 <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
 <title>ruote - testing participants</title>
-<script src='/js/shCore.js'></script>
-<script src='/js/shBrushXml.js'></script>
-<script src='/js/shBrushBash.js'></script>
-<script src='/js/shBrushRuby.js'></script>
-<script src='/js/shBrushJScript.js'></script>
+<script src='/ruote_website/js/shCore.js'></script>
+<script src='/ruote_website/js/shBrushXml.js'></script>
+<script src='/ruote_website/js/shBrushBash.js'></script>
+<script src='/ruote_website/js/shBrushRuby.js'></script>
+<script src='/ruote_website/js/shBrushJScript.js'></script>
 <!-- %script{ :src => "/js/jquery-1.6.1.min.js" } -->
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
-<link href='/css/reset.css' rel='stylesheet' type='text/css'>
-<link href='/css/shCore.css' rel='stylesheet' type='text/css'>
-<link href='/css/shThemeRuote.css' rel='stylesheet' type='text/css'>
-<link href='/css/ruote.css' rel='stylesheet' type='text/css'>
+<link href='/ruote_website/css/reset.css' rel='stylesheet' type='text/css'>
+<link href='/ruote_website/css/shCore.css' rel='stylesheet' type='text/css'>
+<link href='/ruote_website/css/shThemeRuote.css' rel='stylesheet' type='text/css'>
+<link href='/ruote_website/css/ruote.css' rel='stylesheet' type='text/css'>
 </head><body>
 <div id='container'>
 <div id='header'>
 <div id='header-center'>
 <div id='header-left'>
-<a href='/'>
-<img src='/images/ruote.png'>
+<a href='/ruote_website'>
+<img src='/ruote_website/images/ruote.png'>
 </a>
 <div id='header-subtitle'>
 a ruby workflow engine
@@ -28,13 +28,13 @@ a ruby workflow engine
 <div id='header-right'>
 <div id='nav'>
 <span>
-<a href='/documentation.html' title='documentation'>
+<a href='/ruote_website/documentation.html' title='documentation'>
 doc
 </a>
-<a href='/source.html' title='source code'>
+<a href='/ruote_website/source.html' title='source code'>
 source
 </a>
-<a href='/download.html' title='download'>
+<a href='/ruote_website/download.html' title='download'>
 download
 </a>
 <a class='nihongo' href='/ja.html' title='日本語'>
@@ -1204,238 +1204,6 @@ and
 </div>
 <script>
   SyntaxHighlighter.all();
-  
-  if (location.hostname != 'localhost' && location.hostname != '127.0.0.1') {
-  
-    // gauges
-  
-    var _gauges = _gauges || [];
-    (function() {
-      var t   = document.createElement('script');
-      t.type  = 'text/javascript';
-      t.async = true;
-      t.id    = 'gauges-tracker';
-      t.setAttribute('data-site-id', '50454d13f5a1f57e4200001b');
-      t.src = '//secure.gaug.es/track.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(t, s);
-    })();
-  
-    // ga
-  
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-138748-2']);
-    _gaq.push(['_trackPageview']);
-  
-    (function() {
-      var ga = document.createElement('script');
-      ga.type = 'text/javascript';
-      ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(ga, s);
-    })();
-  }
-</script>
-</body>
-</html>
- engine.register_participant 'engineering', Acme::EngineerParticipant
-</pre>
-<p>results in a participant list with 2 participants, &#8216;marketing&#8217; then &#8216;engineering&#8217;.</p>
-<p>The :position option may help :</p>
-<pre class="brush: ruby">
-  engine.register_participant 'alice', Acme::Participant
-
-  engine.register_participant 'bob', Acme::Participant, :position =&gt; 'first'
-    # will register bob before alice
-
-  engine.register_participant 'charly', Acme::Participant, :pos =&gt; 1
-    # will register charly between bob and alice
-</pre>
-<p>If you don&#8217;t want to override previous participants with the same regex, you can use the :override =&gt; false option or :position =&gt; &#8216;after&#8217; or &#8216;before&#8217;</p>
-<pre class="brush: ruby">
-  engine.register_participant 'alice', Acme::ThisParticipant
-  engine.register_participant 'alice', Acme::ThatParticipant, :override =&gt; false
-    # will result in a participant list with two participants registerd under
-    # /^alice$/
-</pre>
-
-<pre class="brush: ruby">
-  engine.register_participant 'alice', Acme::ThisParticipant
-  engine.register_participant 'alice', Acme::ThatParticipant, :pos =&gt; 'before'
-    # will register the second /^alice$/ before the first one
-    # (the Acme::ThisParticipant one)
-
-  engine.register_participant 'alice', Acme::ThereParticipant, :pos =&gt; 'after'
-    # will register the third /^alice$/ after the last one of the alices
-    # (in this case Acme::ThisParticipant one)
-</pre>
-<p>Having multiple registrations for the same regex is useful when using the <a href="implementing_participants.html#accept">#accept?</a> method of participant implementations.</p>
-<p>It&#8217;s probably simpler to register all the participants at once with <a href="#r_block" title="&amp;block">engine#register</a> instead of fiddling with engine#register_participant and its options.</p>
-<h4 id="r_block">engine#register(&amp;block)</h4>
-<p>Thanks to the work of <a href="http://github.com/tosch/">Torsten</a>, it&#8217;s possible to register participants in nice blocks :</p>
-<pre class="brush: ruby">
-  engine.register do
-
-    notify MyApp::Participants::RemoteNotification, 'flavour' =&gt; 'normal'
-    alarm MyApp::Participants::RemoteNotification, 'flavour' =&gt; 'alarm'
-      # two participants for notification and alarms
-
-    catchall Ruote::StorageParticipant
-      # all the workitems for participants that are neither 'notify' or 'alarm'
-      # are caught by a storage participant
-  end
-</pre>
-<p>Note that simply stating &#8220;catchall&#8221; will redirect to a/the storage participant :</p>
-<pre class="brush: ruby">
-  engine.register do
-    catchall
-  end
-</pre>
-<p>is thus equivalent to</p>
-<pre class="brush: ruby">
-  engine.register do
-    catchall Ruote::StorageParticipant
-  end
-</pre>
-<p>The first example above assumes the participant name is the first word encountered (the &#8216;method&#8217; name in fact). If you want to pass a regular expression, use the &#8216;participant&#8217; notation :</p>
-<pre class="brush: ruby">
-  engine.register do
-    participant 'user-.+', Ruote::StorageParticipant
-    participant 'action-.+', MyApp::RemoteActionParticipant
-  end
-</pre>
-<p><strong><span class="caps">NOTE</span></strong> : since ruote 2.3.0 register(&amp;block) will clear the participant list by default, thus after</p>
-<pre class="brush: ruby">
-  engine.register do
-    participant 'engineering', Ruote::StorageParticipant
-    participant 'marketing', Acme::StorageParticipant
-  end
-</pre>
-<p>one ends up with 2 participants listed, &#8216;engineering&#8217; and &#8216;marketing&#8217;, whatever participants you had previously.</p>
-<p>One can prevent this clearing by doing</p>
-<pre class="brush: ruby">
-  engine.register :clear =&gt; false do
-    participant 'engineering', Ruote::StorageParticipant
-    participant 'marketing', Acme::StorageParticipant
-  end
-</pre>
-<h4 id="catchall">engine#register(&amp;block) and &#8220;catchall&#8221;</h4>
-<p>&#8220;catchall&#8221; when used, is placed last in a registration block:</p>
-<pre class="brush: ruby">
-  engine.register do
-    participant 'user-.+', MyApp::InboxParticipant
-    participant 'action-.+', MyApp::RemoteActionParticipant
-    catchall
-  end
-</pre>
-<p>This block is equivalent to:</p>
-<pre class="brush: ruby">
-  engine.register do
-    participant 'user-.+', MyApp::InboxParticipant
-    participant 'action-.+', MyApp::RemoteActionParticipant
-    participant '.+', Ruote::StorageParticipant
-  end
-</pre>
-<p>It catches all the workitems. Placing further participant registrations after a catchall makes thus no sense (they&#8217;ll never be used).</p>
-<p>&#8220;catchall&#8221; can be used with participant classes (and options), like in:</p>
-<pre class="brush: ruby">
-    catchall Acme::DefaultParticipant
-</pre>
-<p>or:</p>
-<pre class="brush: ruby">
-    catchall(
-      Acme::SmtpParticipant,
-      :email =&gt; 'admin@example.com', :msg =&gt; 'unknown participant')
-</pre>
-<h4 id="r_list">engine#participant_list=</h4>
-<p>Starting with ruote 2.1.11, instead of using register_participant and register, you can pass the whole list of participants at once.</p>
-<pre class="brush: ruby">
-  engine.participant_list = [
-    [ /^user-.+$/, 'Ruote::StorageParticipant', {} ],
-    [ /^action-.+$/, MyApp::RemoteActionParticipant, { 'server' =&gt; 'main' } ]
-  ]
-</pre>
-<p>Note that it&#8217;s OK to pass the class name as an instance of Class (second line) or as a string (first line).</p>
-<p>Checking the current content of the participant list looks like :</p>
-<pre class="brush: ruby">
-  engine.participant_list.each { |pe| puts pe.to_s }
-    #
-    # /^user-.+$/ ==&gt; Ruote::StorageParticipant {}
-    # /^action-.+$/ ==&gt; MyApp::RemoteActionParticipipant { 'server' =&gt; 'main' }
-</pre>
-<h3 id="threads">participants and threads</h3>
-<p>As you may have gleaned from this doc or from a blog post, ruote 2.1 tries to have only 1 thread per / for the worker, handling all the workflow activity (direct launch/apply orders or triggering schedules). So you end up with 1 extra thread per worker. Note that if you only have an engine (and let the worker run in another runtime, there is no extra thread used by ruote).</p>
-<p>(There is an exception with a worker bound to <a href="http://github.com/jmettraux/ruote-couch">ruote-couch</a>, it uses one extra thread to &#8216;observe&#8217; CouchDB (instead of polling it))</p>
-<p>Since, most of the time, participant are IO bound, having the dispatching work performed in the worker thread would mean that each delivery to a participant monopolizes the worker. That&#8217;s why, by default, ruote does each participant#consume call in a new thread.</p>
-<p>(Maybe we should have a switch to disable participant threading &#8220;en masse&#8221;, it could be OK for small organization deployments, ping me on the <a href="http://groups.google.com/group/openwferu-users">ML</a> or on #ruote if you need this)</p>
-<p>A participant instance may inform ruote that it doesn&#8217;t want/need to have its consume method called in a new thread each time. It does that by making sure it has a do_not_thread method and that this method returns true. Since it&#8217;s a method, depending on its implementation, it might not always return true.</p>
-<p>As an illustration, the <a href="http://github.com/jmettraux/ruote/blob/ruote2.1/lib/ruote/part/storage_participant.rb">Ruote::StorageParticipant class</a> returns true for do_not_thread (all the time). (trusting you not to have put your storage on Mars while your worker is on Earth).</p>
-<p>Some ruote users, have their own implementation of the <a href="http://github.com/jmettraux/ruote/blob/ruote2.1/lib/ruote/svc/dispatch_pool.rb">dispatch pool</a> that enforces an upper threshold for the thread count.</p>
-<p>The &#8220;dispatch&#8221; thread is discarded as soon as the delivery to the participant (or the participant consumption and reply) is done.</p>
-<h3>see also</h3>
-<ul>
-	<li><a href="implementing_participants.html">implementing participants</a></li>
-	<li>the <a href="exp/participant.html">participant expression</a></li>
-	<li><a href="part_implementations.html">participant implementations</a></li>
-	<li><a href="participant_testing.html">participant testing</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div id='footer'>
-<div id='footer-center'>
-<p>
-<span id='footer-left'>
-<a href='https://github.com/jmettraux/ruote_website/issues'>doc issue reporting</a>
-|
-<a href='https://github.com/jmettraux/ruote_website'>doc source</a>
-| created with
-<a href='http://nanoc.stoneship.org'>nanoc</a>
-and
-<a href='http://alexgorbatchev.com/SyntaxHighlighter/'>syntax highlighter</a>
-</span>
-<span id='footer-right'>
-&copy; 2005-2013 the ruote team
-</span>
-</p>
-</div>
-</div>
-<script>
-  SyntaxHighlighter.all();
-  
-  if (location.hostname != 'localhost' && location.hostname != '127.0.0.1') {
-  
-    // gauges
-  
-    var _gauges = _gauges || [];
-    (function() {
-      var t   = document.createElement('script');
-      t.type  = 'text/javascript';
-      t.async = true;
-      t.id    = 'gauges-tracker';
-      t.setAttribute('data-site-id', '50454d13f5a1f57e4200001b');
-      t.src = '//secure.gaug.es/track.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(t, s);
-    })();
-  
-    // ga
-  
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-138748-2']);
-    _gaq.push(['_trackPageview']);
-  
-    (function() {
-      var ga = document.createElement('script');
-      ga.type = 'text/javascript';
-      ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(ga, s);
-    })();
-  }
 </script>
 </body>
 </html>
