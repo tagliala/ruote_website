@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html><head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<title>ruote - await expression</title>
+<script src='/js/shCore.js'></script>
+<script src='/js/shBrushXml.js'></script>
+<script src='/js/shBrushBash.js'></script>
+<script src='/js/shBrushRuby.js'></script>
+<script src='/js/shBrushJScript.js'></script>
+<!-- %script{ :src => "/js/jquery-1.6.1.min.js" } -->
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+<link href='/css/reset.css' rel='stylesheet' type='text/css'>
+<link href='/css/shCore.css' rel='stylesheet' type='text/css'>
+<link href='/css/shThemeRuote.css' rel='stylesheet' type='text/css'>
+<link href='/css/ruote.css' rel='stylesheet' type='text/css'>
+</head><body>
+<div id='container'>
+<div id='header'>
+<div id='header-center'>
+<div id='header-left'>
+<a href='/'>
+<img src='/images/ruote.png'>
+</a>
+<div id='header-subtitle'>
+a ruby workflow engine
+</div>
+</div>
+<div id='header-right'>
+<div id='nav'>
+<span>
+<a href='/documentation.html' title='documentation'>
+doc
+</a>
+<a href='/source.html' title='source code'>
+source
+</a>
+<a href='/download.html' title='download'>
+download
+</a>
+<a class='nihongo' href='/ja.html' title='日本語'>
+日本語
+</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div id='content'>
+<div id='content-center'>
+<div id='sidebar'><h3 onclick='document.location = &quot;/documentation.html&quot;' style='cursor: pointer'>
+Documentation
+</h3>
+<ul>
+<li>
+<a href='/ruote_website/exp/add_branches.html'>
+add_branches expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/add_branches.html'>
+add_branches
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/add_branches.html'>
+add_branch
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/apply.html'>
+apply expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/apply.html'>
+apply
+</a>
+</li>
+</ul>
+<li class='current'>
+<a href='/ruote_website/exp/await.html'>
+await expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/await.html'>
+await
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part/block_participant.html'>
+block_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/cancel_process.html'>
+cancel_process expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/cancel_process.html'>
+cancel_process
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/cancel_process.html'>
+terminate
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/cancel_process.html'>
+kill_process
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part/code_participant.html'>
+code_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/command.html'>
+command expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/command.html'>
+skip
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/command.html'>
+back
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/command.html'>
+jump
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/command.html'>
+rewind
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/command.html'>
+continue
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/command.html'>
+break
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/command.html'>
+stop
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/command.html'>
+over
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/command.html'>
+reset
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/common_attributes.html'>
+common attributes
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/concurrence.html'>
+concurrence expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/concurrence.html'>
+concurrence
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/concurrent_iterator.html'>
+concurrent_iterator expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/concurrent_iterator.html'>
+concurrent_iterator
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/concurrent_iterator.html'>
+citerator
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/conditions.html'>
+conditions
+</a>
+</li>
+<li>
+<a href='/ruote_website/configuration.html'>
+configuration
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/cron.html'>
+cron expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/cron.html'>
+cron
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/cron.html'>
+every
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/cursor.html'>
+cursor expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/cursor.html'>
+cursor
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/cursor.html'>
+loop
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/cursor.html'>
+repeat
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part/decision_participant.html'>
+decision_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/define.html'>
+define expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/define.html'>
+define
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/define.html'>
+process_definition
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/define.html'>
+workflow_definition
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/documentation.html'>
+documentation
+</a>
+</li>
+<li>
+<a href='/ruote_website/dollar.html'>
+dollar notation
+</a>
+</li>
+<li>
+<a href='/ruote_website/download.html'>
+download
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/echo.html'>
+echo expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/echo.html'>
+echo
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part/engine_participant.html'>
+engine_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/equals.html'>
+equals expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/equals.html'>
+equals
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/error.html'>
+error expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/error.html'>
+error
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/expressions.html'>
+expressions
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/filter.html'>
+filter expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/filter.html'>
+filter
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/forget.html'>
+forget expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/forget.html'>
+forget
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/given.html'>
+given expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/given.html'>
+given
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/glossary.html'>
+glossary
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/if.html'>
+if expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/if.html'>
+if
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/implementing_a_storage.html'>
+implementing a storage
+</a>
+</li>
+<li>
+<a href='/ruote_website/implementing_participants.html'>
+implementing participants
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/inc.html'>
+inc expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/inc.html'>
+inc
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/inc.html'>
+dec
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/inc.html'>
+increment
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/inc.html'>
+decrement
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/inc.html'>
+push
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/inc.html'>
+pop
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website.html'>
+index
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/iterator.html'>
+iterator expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/iterator.html'>
+iterator
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/let.html'>
+let expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/let.html'>
+let
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/listen.html'>
+listen expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/listen.html'>
+listen
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/listen.html'>
+receive
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/listen.html'>
+intercept
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/lists.html'>
+lists
+</a>
+</li>
+<li>
+<a href='/ruote_website/part/local_participant.html'>
+local_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/lose.html'>
+lose expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/lose.html'>
+lose
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part/no_op_participant.html'>
+no_op_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/noisy.html'>
+noisy output
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/noop.html'>
+noop expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/noop.html'>
+noop
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part/null_participant.html'>
+null_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/on_error.html'>
+on_error expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/on_error.html'>
+on_error
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/once.html'>
+once expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/once.html'>
+once
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/once.html'>
+when
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/once.html'>
+as_soon_as
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/participant.html'>
+participant expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/participant.html'>
+participant
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part_implementations.html'>
+participant implementations
+</a>
+</li>
+<li>
+<a href='/ruote_website/presentations.html'>
+presentations
+</a>
+</li>
+<li>
+<a href='/ruote_website/process_administration.html'>
+process administration
+</a>
+</li>
+<li>
+<a href='/ruote_website/definitions.html'>
+process definitions
+</a>
+</li>
+<li>
+<a href='/ruote_website/process_observation.html'>
+process observation
+</a>
+</li>
+<li>
+<a href='/ruote_website/participants.html'>
+process participants
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/read.html'>
+read expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/read.html'>
+read
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/redo.html'>
+redo expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/redo.html'>
+redo
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/ref.html'>
+ref expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/ref.html'>
+ref
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/registerp.html'>
+registerp expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/registerp.html'>
+registerp
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/rel.html'>
+rel values for ruote-http / ruote-kit links
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/reserve.html'>
+reserve expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/reserve.html'>
+reserve
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/resources.html'>
+resources
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/restore.html'>
+restore expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/restore.html'>
+restore
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/restore.html'>
+set_fields
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part/rev_participant.html'>
+rev_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/users.html'>
+ruote users
+</a>
+</li>
+<li>
+<a href='/ruote_website/sample_workflow_run.html'>
+sample workflow run
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/save.html'>
+save expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/save.html'>
+save
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/sequence.html'>
+sequence expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/sequence.html'>
+sequence
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/sequence.html'>
+let
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/set.html'>
+set expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/set.html'>
+rset
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/set.html'>
+set
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/set.html'>
+unset
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part/smtp_participant.html'>
+smtp_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/source.html'>
+source
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/stall.html'>
+stall expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/stall.html'>
+stall
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part/storage_participant.html'>
+storage_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/subprocess.html'>
+subprocess expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/subprocess.html'>
+subprocess
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/testing_participants.html'>
+testing participants
+</a>
+</li>
+<li>
+<a href='/ruote_website/testing_processes.html'>
+testing processes
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/that.html'>
+that expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/that.html'>
+that
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/that.html'>
+of
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/undo.html'>
+undo expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/undo.html'>
+undo
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/undo.html'>
+cancel
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/undo.html'>
+kill
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/unregisterp.html'>
+unregisterp expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/unregisterp.html'>
+unregisterp
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/vars_and_fields.html'>
+variables and fields
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/wait.html'>
+wait expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/wait.html'>
+wait
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/wait.html'>
+sleep
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/with_rails.html'>
+with rails
+</a>
+</li>
+<li>
+<a href='/ruote_website/patterns.html'>
+workflow control patterns
+</a>
+</li>
+<li>
+<a href='/ruote_website/ja.html'>
+日本語
+</a>
+</li>
+</ul>
+<h3>
+More
+</h3>
+<ul class='contact'>
+<li>
+<a href='https://github.com/jmettraux/ruote/tree/master/quickstart'>
+quickstart
+</a>
+</li>
+<li>
+<a href='/presentations.html'>
+presentations
+</a>
+</li>
+<li>
+<a href='/resources.html'>
+resources
+</a>
+</li>
+<li>
+<a href='/users.html'>
+users
+</a>
+</li>
+</ul>
+<h3>
+Meta
+</h3>
+<ul class='contact'>
+<li>
+<a href='/source.html'>
+source
+</a>
+</li>
+<li>
+<a href='/download.html'>
+download
+</a>
+</li>
+<li>
+<a href='http://jmettraux.github.com'>
+blog
+</a>
+</li>
+<li>
+<a href='/lists.html'>
+mailing list
+</a>
+</li>
+<li>
+<a href='http://ruote-ci.s3.amazonaws.com/ci.html'>
+continuous integration
+</a>
+</li>
+<li>
+<a href='http://ruote-irclogs.s3.amazonaws.com/logs.html'>
+IRC
+</a>
+</li>
+<li>
+<a href='https://www.ohloh.net/p/ruote/'>
+on ohloh
+</a>
+</li>
+</ul>
+<h3>
+<span>
+Search
+</span>
+</h3>
+<ul class='contact'>
+<li>
+<form action='http://www.google.com/search' method='GET'>
+<input id='qq' name='qq' style='' type='text'>
+<input id='q' name='q' type='hidden'>
+<input onclick='adjustSearch();' type='submit' value='search'>
+</form>
+</li>
+</ul>
+<script>
+  function adjustSearch() {
+    $('#q').val($('#qq').val() + ' site:http://ruote.rubyforge.org');
+  }
+</script>
+</div>
+<div id='content-main'>
+<h2>await</h2>
+<p>The &#8216;await&#8217; expression is the successor of the &#8216;listen&#8217; expression<br />
+(Ruote::Exp::ListenExpression). It&#8217;s been introduced in ruote 2.3.0.</p>
+<p>Hopefully it has a simpler syntax than &#8216;listen&#8217;. The major difference<br />
+between listen and await is that await, by default, listens only<br />
+to events in the same process instance.</p>
+<p>This expression blocks until an event occurs somewhere else in the same<br />
+process instance.</p>
+<pre class="brush: ruby">
+  concurrence do
+    sequence do
+      participant 'alice'
+      await :left_tag =&gt; 'a'
+      participant 'bob'
+    end
+    sequence :tag =&gt; 'a' do
+      participant 'charly'
+      participant 'doug'
+    end
+    sequence do
+      participant 'eric'
+    end
+  end
+</pre>
+<p>In this example, the flow between alice and bob, will block until &#8216;doug&#8217;<br />
+has replied (Yes, this example could have been written using<br />
+:left_participant =&gt; &#8216;doug&#8217;).</p>
+<h3>modes</h3>
+<p>&#8216;await&#8217;, like &#8216;listen&#8217; works in two mode, &#8220;once&#8221; and &#8220;multiple times&#8221;.</p>
+<p>In the &#8216;once&#8217; mode, the await expression blocks the flow until the workitem<br />
+(somewhere else in the process instance) leaves the alice participant:</p>
+<pre class="brush: ruby">
+  sequence do
+    await :left_participant =&gt; 'alice'
+    participant 'eric'
+  end
+</pre>
+<p>In the &#8216;multiple times&#8217; mode, the await expression triggers its children<br />
+expressions each time a matching event occurs. It never replies to its<br />
+parent expression. Here, the participant &#8216;post_alice&#8217; will receive a<br />
+workitem each time, somewhere else in the process</p>
+<pre class="brush: ruby">
+  await :left_participant =&gt; 'alice' do
+    participant 'post_alice'
+  end
+</pre>
+<p>Note, that, unlike &#8220;listen&#8221; in previous versions of ruote, it&#8217;s OK<br />
+to consider the children of &#8220;await&#8221; as part of an implicit sequence:</p>
+<pre class="brush: ruby">
+  await :left_participant =&gt; 'alice' do
+    participant 'bob'
+    participant 'charly'
+  end
+</pre>
+<p>Bob and charly will be applied in sequence.</p>
+<h3>tag, participant or error events</h3>
+<p>Await listens to 3 types of events: tag, participant and error events.</p>
+<p>Here is a assortment of examples:</p>
+<pre class="brush: ruby">
+  await :in_participant =&gt; 'alice'
+  await :reached_participant =&gt; 'alice'
+  await :out_participant =&gt; 'alice'
+  await :left_participant =&gt; 'alice'
+
+  await :participant =&gt; 'alice'
+  await :participants =&gt; 'alice' # looks better with an array
+
+  # implicit OR with arrays:
+  #
+  await :in_participant =&gt; /^al/
+  await :in_participant =&gt; %w[ alice alfred ]
+  await :in_participant =&gt; [ /^al/, /fred$/ ]
+
+  await :in_tag =&gt; 'phase2'
+  await :reached_tag =&gt; 'phase2'
+  await :out_tag =&gt; 'phase2'
+  await :left_tag =&gt; 'phase2'
+
+  await :tags =&gt; 'phase2'
+
+  await :error
+  await :error =&gt; 'ArgumentError'
+  await :error =&gt; 'RuntimeError, ArgumentError'
+  await :error =&gt; %w[ RuntimeError ArgumentError ]
+</pre>
+<p>Basically, the attribute is composed of a left part and a right part.<br />
+The right part is one of &#8220;in&#8221;, &#8220;reached&#8221; or &#8220;out&#8221;, &#8220;left&#8221;. &#8220;in&#8221; and<br />
+&#8220;reached&#8221; are equivalent, as are &#8220;out&#8221; and &#8220;left&#8221;.</p>
+<p>The right part is &#8220;tag&#8221; or &#8220;participant&#8221;.</p>
+<p>&#8220;error&#8221; can be used alone.</p>
+<p>When &#8220;tags&#8221; and &#8220;participant(s)&#8221; are used alone, they are synonymous with<br />
+&#8220;reached_tag&#8221; and &#8220;reached_participant&#8221; respectively.</p>
+<h4>absolute tags</h4>
+<p>It&#8217;s OK to specify absolute tags, like in:</p>
+<pre class="brush: ruby">
+  pdef = Ruote.define do
+    concurrence do
+      sequence do
+        await :tag =&gt; 'a/b'
+        echo 'a/b'
+      end
+      sequence :tag =&gt; 'a' do
+        noop
+        sequence :tag =&gt; 'b' do
+          echo 'b'
+        end
+      end
+    end
+  end
+</pre>
+<h3>:where condition</h3>
+<p>The &#8220;await&#8221; expression accepts an optional attribute which adds another<br />
+guard which is checked to determine if the trigger should occur or not.</p>
+<pre class="brush: ruby">
+  pdef = Ruote.process_definition do
+    concurrence :wait_for =&gt; 1 do
+      await :left_participant =&gt; 'a', :where =&gt; "${task} == 'sing'" do
+        echo 'sing-a'
+      end
+      await :left_participant =&gt; 'a' do
+        echo 'any-a'
+      end
+      concurrence do
+        participant 'a', :task =&gt; 'talk'
+        participant 'a', :task =&gt; 'sing'
+      end
+    end
+  end
+</pre>
+<p>In this example, the message &#8216;sing-a&#8217; will be echoed only once (twice for<br />
+&#8216;any-a&#8217;).</p>
+<h3>:global =&gt; false by default</h3>
+<p>Unlike the &#8216;listen&#8217; expression, &#8216;await&#8217;, by default, only triggers for<br />
+events in the same process instance. To react on events whatever the<br />
+process instance, :global =&gt; true (or &#8220;true&#8221;) can be used.</p>
+<pre class="brush: ruby">
+  await :left_tag =&gt; 'phase1', :global =&gt; true do
+    participant 'supervisor', :msg =&gt; 'phase1 over'
+  end
+
+</pre>
+<h3>:merge =&gt; nil/ignore</h3>
+<p>In the listen expression, the default is for the event&#8217;s workitem to<br />
+get merged into the waiting workitem. With &#8216;await&#8217;, the default is<br />
+the event&#8217;s workitem completely overriding the awaiting workitem.</p>
+<p>Using the :merge attribute, other behaviours are possible.</p>
+<pre class="brush: ruby">
+  await :left_tag =&gt; 'phase3', :merge =&gt; 'ignore'
+  await :left_tag =&gt; 'phase3', :merge =&gt; 'drop'
+    # the event's workitem is ignored, the awaiting workitem is used
+
+  await :left_tag =&gt; 'phase3', :merge =&gt; 'override'
+    # the event's workitem is used, this is the default
+
+  await :left_tag =&gt; 'phase3', :merge =&gt; 'incoming'
+    # a hash merge happens, the incoming (event) workitem wins
+    # workitem = awaiting.merge(incoming)
+
+  await :left_tag =&gt; 'phase3', :merge =&gt; 'awaiting'
+    # a hash merge happens, the awaiting workitem wins
+    # workitem = incoming.merge(awaiting)
+</pre>
+<p>Note: the :where guard is always about the event&#8217;s workitem (not the<br />
+workitem as it reached the &#8216;await&#8217; expression).</p>
+<h3>note: the &#8220;await&#8221; attribute</h3>
+<p>(since ruote 3.2.1)</p>
+<p>&#8220;listen&#8221; and &#8220;await&#8221; are both ruote expressions. There is also an<br />
+attribute common to all the expressions: :await.</p>
+<pre class="brush: ruby">
+  concurrence do
+    sequence do
+      alice
+      sequence :tag =&gt; 'stage2' do
+        bob
+      end
+    end
+    sequence do
+      charly
+      diana :await =&gt; 'left_tag:stage2'
+      eliza
+    end
+    frank
+  end
+</pre>
+<p>The expressions with an await attribute suspends its application until<br />
+the awaited event happens.</p>
+<p>This await attribute, defaults to &#8220;left_tag:&#8221;, so</p>
+<pre class="brush: ruby">
+  diana :await =&gt; 'stage2'
+    # is equivalent to
+  diana :await =&gt; 'left_tag:stage2'
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id='footer'>
+<div id='footer-center'>
+<p>
+<span id='footer-left'>
+<a href='https://github.com/jmettraux/ruote_website/issues'>doc issue reporting</a>
+|
+<a href='https://github.com/jmettraux/ruote_website'>doc source</a>
+| created with
+<a href='http://nanoc.stoneship.org'>nanoc</a>
+and
+<a href='http://alexgorbatchev.com/SyntaxHighlighter/'>syntax highlighter</a>
+</span>
+<span id='footer-right'>
+&copy; 2005-2013 the ruote team
+</span>
+</p>
+</div>
+</div>
+<script>
+  SyntaxHighlighter.all();
+  
+  if (location.hostname != 'localhost' && location.hostname != '127.0.0.1') {
+  
+    // gauges
+  
+    var _gauges = _gauges || [];
+    (function() {
+      var t   = document.createElement('script');
+      t.type  = 'text/javascript';
+      t.async = true;
+      t.id    = 'gauges-tracker';
+      t.setAttribute('data-site-id', '50454d13f5a1f57e4200001b');
+      t.src = '//secure.gaug.es/track.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(t, s);
+    })();
+  
+    // ga
+  
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-138748-2']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  }
+</script>
+</body>
+</html>

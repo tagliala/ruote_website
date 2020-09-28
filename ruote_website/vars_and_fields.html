@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html><head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<title>ruote - process variables and workitem fields</title>
+<script src='/js/shCore.js'></script>
+<script src='/js/shBrushXml.js'></script>
+<script src='/js/shBrushBash.js'></script>
+<script src='/js/shBrushRuby.js'></script>
+<script src='/js/shBrushJScript.js'></script>
+<!-- %script{ :src => "/js/jquery-1.6.1.min.js" } -->
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+<link href='/css/reset.css' rel='stylesheet' type='text/css'>
+<link href='/css/shCore.css' rel='stylesheet' type='text/css'>
+<link href='/css/shThemeRuote.css' rel='stylesheet' type='text/css'>
+<link href='/css/ruote.css' rel='stylesheet' type='text/css'>
+</head><body>
+<div id='container'>
+<div id='header'>
+<div id='header-center'>
+<div id='header-left'>
+<a href='/'>
+<img src='/images/ruote.png'>
+</a>
+<div id='header-subtitle'>
+a ruby workflow engine
+</div>
+</div>
+<div id='header-right'>
+<div id='nav'>
+<span>
+<a href='/documentation.html' title='documentation'>
+doc
+</a>
+<a href='/source.html' title='source code'>
+source
+</a>
+<a href='/download.html' title='download'>
+download
+</a>
+<a class='nihongo' href='/ja.html' title='日本語'>
+日本語
+</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div id='content'>
+<div id='content-center'>
+<div id='sidebar'><h3 onclick='document.location = &quot;/documentation.html&quot;' style='cursor: pointer'>
+Documentation
+</h3>
+<ul>
+<li>
+<a href='/ruote_website/exp/add_branches.html'>
+add_branches expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/add_branches.html'>
+add_branches
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/add_branches.html'>
+add_branch
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/apply.html'>
+apply expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/apply.html'>
+apply
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/await.html'>
+await expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/await.html'>
+await
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part/block_participant.html'>
+block_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/cancel_process.html'>
+cancel_process expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/cancel_process.html'>
+cancel_process
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/cancel_process.html'>
+terminate
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/cancel_process.html'>
+kill_process
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part/code_participant.html'>
+code_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/command.html'>
+command expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/command.html'>
+skip
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/command.html'>
+back
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/command.html'>
+jump
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/command.html'>
+rewind
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/command.html'>
+continue
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/command.html'>
+break
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/command.html'>
+stop
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/command.html'>
+over
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/command.html'>
+reset
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/common_attributes.html'>
+common attributes
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/concurrence.html'>
+concurrence expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/concurrence.html'>
+concurrence
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/concurrent_iterator.html'>
+concurrent_iterator expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/concurrent_iterator.html'>
+concurrent_iterator
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/concurrent_iterator.html'>
+citerator
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/conditions.html'>
+conditions
+</a>
+</li>
+<li>
+<a href='/ruote_website/configuration.html'>
+configuration
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/cron.html'>
+cron expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/cron.html'>
+cron
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/cron.html'>
+every
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/cursor.html'>
+cursor expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/cursor.html'>
+cursor
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/cursor.html'>
+loop
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/cursor.html'>
+repeat
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part/decision_participant.html'>
+decision_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/define.html'>
+define expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/define.html'>
+define
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/define.html'>
+process_definition
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/define.html'>
+workflow_definition
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/documentation.html'>
+documentation
+</a>
+</li>
+<li>
+<a href='/ruote_website/dollar.html'>
+dollar notation
+</a>
+</li>
+<li>
+<a href='/ruote_website/download.html'>
+download
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/echo.html'>
+echo expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/echo.html'>
+echo
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part/engine_participant.html'>
+engine_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/equals.html'>
+equals expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/equals.html'>
+equals
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/error.html'>
+error expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/error.html'>
+error
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/expressions.html'>
+expressions
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/filter.html'>
+filter expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/filter.html'>
+filter
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/forget.html'>
+forget expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/forget.html'>
+forget
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/given.html'>
+given expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/given.html'>
+given
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/glossary.html'>
+glossary
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/if.html'>
+if expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/if.html'>
+if
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/implementing_a_storage.html'>
+implementing a storage
+</a>
+</li>
+<li>
+<a href='/ruote_website/implementing_participants.html'>
+implementing participants
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/inc.html'>
+inc expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/inc.html'>
+inc
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/inc.html'>
+dec
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/inc.html'>
+increment
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/inc.html'>
+decrement
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/inc.html'>
+push
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/inc.html'>
+pop
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website.html'>
+index
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/iterator.html'>
+iterator expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/iterator.html'>
+iterator
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/let.html'>
+let expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/let.html'>
+let
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/listen.html'>
+listen expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/listen.html'>
+listen
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/listen.html'>
+receive
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/listen.html'>
+intercept
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/lists.html'>
+lists
+</a>
+</li>
+<li>
+<a href='/ruote_website/part/local_participant.html'>
+local_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/lose.html'>
+lose expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/lose.html'>
+lose
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part/no_op_participant.html'>
+no_op_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/noisy.html'>
+noisy output
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/noop.html'>
+noop expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/noop.html'>
+noop
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part/null_participant.html'>
+null_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/on_error.html'>
+on_error expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/on_error.html'>
+on_error
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/once.html'>
+once expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/once.html'>
+once
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/once.html'>
+when
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/once.html'>
+as_soon_as
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/participant.html'>
+participant expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/participant.html'>
+participant
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part_implementations.html'>
+participant implementations
+</a>
+</li>
+<li>
+<a href='/ruote_website/presentations.html'>
+presentations
+</a>
+</li>
+<li>
+<a href='/ruote_website/process_administration.html'>
+process administration
+</a>
+</li>
+<li>
+<a href='/ruote_website/definitions.html'>
+process definitions
+</a>
+</li>
+<li>
+<a href='/ruote_website/process_observation.html'>
+process observation
+</a>
+</li>
+<li>
+<a href='/ruote_website/participants.html'>
+process participants
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/read.html'>
+read expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/read.html'>
+read
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/redo.html'>
+redo expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/redo.html'>
+redo
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/ref.html'>
+ref expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/ref.html'>
+ref
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/registerp.html'>
+registerp expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/registerp.html'>
+registerp
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/rel.html'>
+rel values for ruote-http / ruote-kit links
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/reserve.html'>
+reserve expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/reserve.html'>
+reserve
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/resources.html'>
+resources
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/restore.html'>
+restore expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/restore.html'>
+restore
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/restore.html'>
+set_fields
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part/rev_participant.html'>
+rev_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/users.html'>
+ruote users
+</a>
+</li>
+<li>
+<a href='/ruote_website/sample_workflow_run.html'>
+sample workflow run
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/save.html'>
+save expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/save.html'>
+save
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/sequence.html'>
+sequence expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/sequence.html'>
+sequence
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/sequence.html'>
+let
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/set.html'>
+set expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/set.html'>
+rset
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/set.html'>
+set
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/set.html'>
+unset
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part/smtp_participant.html'>
+smtp_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/source.html'>
+source
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/stall.html'>
+stall expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/stall.html'>
+stall
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/part/storage_participant.html'>
+storage_participant
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/subprocess.html'>
+subprocess expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/subprocess.html'>
+subprocess
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/testing_participants.html'>
+testing participants
+</a>
+</li>
+<li>
+<a href='/ruote_website/testing_processes.html'>
+testing processes
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/that.html'>
+that expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/that.html'>
+that
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/that.html'>
+of
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/undo.html'>
+undo expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/undo.html'>
+undo
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/undo.html'>
+cancel
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/undo.html'>
+kill
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/exp/unregisterp.html'>
+unregisterp expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/unregisterp.html'>
+unregisterp
+</a>
+</li>
+</ul>
+<li class='current'>
+<a href='/ruote_website/vars_and_fields.html'>
+variables and fields
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/wait.html'>
+wait expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/ruote_website/exp/wait.html'>
+wait
+</a>
+</li>
+<li>
+<a href='/ruote_website/exp/wait.html'>
+sleep
+</a>
+</li>
+</ul>
+<li>
+<a href='/ruote_website/with_rails.html'>
+with rails
+</a>
+</li>
+<li>
+<a href='/ruote_website/patterns.html'>
+workflow control patterns
+</a>
+</li>
+<li>
+<a href='/ruote_website/ja.html'>
+日本語
+</a>
+</li>
+</ul>
+<h3>
+More
+</h3>
+<ul class='contact'>
+<li>
+<a href='https://github.com/jmettraux/ruote/tree/master/quickstart'>
+quickstart
+</a>
+</li>
+<li>
+<a href='/presentations.html'>
+presentations
+</a>
+</li>
+<li>
+<a href='/resources.html'>
+resources
+</a>
+</li>
+<li>
+<a href='/users.html'>
+users
+</a>
+</li>
+</ul>
+<h3>
+Meta
+</h3>
+<ul class='contact'>
+<li>
+<a href='/source.html'>
+source
+</a>
+</li>
+<li>
+<a href='/download.html'>
+download
+</a>
+</li>
+<li>
+<a href='http://jmettraux.github.com'>
+blog
+</a>
+</li>
+<li>
+<a href='/lists.html'>
+mailing list
+</a>
+</li>
+<li>
+<a href='http://ruote-ci.s3.amazonaws.com/ci.html'>
+continuous integration
+</a>
+</li>
+<li>
+<a href='http://ruote-irclogs.s3.amazonaws.com/logs.html'>
+IRC
+</a>
+</li>
+<li>
+<a href='https://www.ohloh.net/p/ruote/'>
+on ohloh
+</a>
+</li>
+</ul>
+<h3>
+<span>
+Search
+</span>
+</h3>
+<ul class='contact'>
+<li>
+<form action='http://www.google.com/search' method='GET'>
+<input id='qq' name='qq' style='' type='text'>
+<input id='q' name='q' type='hidden'>
+<input onclick='adjustSearch();' type='submit' value='search'>
+</form>
+</li>
+</ul>
+<script>
+  function adjustSearch() {
+    $('#q').val($('#qq').val() + ' site:http://ruote.rubyforge.org');
+  }
+</script>
+</div>
+<div id='content-main'>
+<h2>process variables and workitem fields</h2>
+<p>Most of the time, they are referred to as &#8220;variables&#8221; and &#8220;fields&#8221;. Saying &#8220;process variables&#8221; and &#8220;workitem fields&#8221; should make it less confusing (once the two associations stick).</p>
+<p>Manipulating variables and fields from process definitions usually occur via the <a href="exp/set.html">set</a> expression (and its <a href="exp/set.html">unset</a> counterpart).</p>
+<p>Variables and fields are accessible from the process definitions via the <a href="dollar.html">dollar notation</a>.</p>
+<h3>process variables</h3>
+<p>Process variables are stored inside of ruote, they are not accessible to participants who, usually, only get to see workitems (and workitem fields).</p>
+<p>Process variables are mostly used as helpers for the control flow, as in</p>
+<pre class="brush: ruby">
+pdef = Ruote.process_definition :name =&gt; 'test' do
+  citerator :on_val =&gt; 'alice, bob, charly', :to_var =&gt; 'v' do
+    participant '${v:v}'
+  end
+end
+</pre>
+<p>where the variable named &#8216;v&#8217; holds concurrently &#8216;alice&#8217;, &#8216;bob&#8217; and &#8216;charly&#8217;.</p>
+<p>This example shows variables have scopes (it&#8217;s a programming language after all). The 3 concurrent &#8216;v&#8217; are living in three different scopes.</p>
+<pre class="brush: ruby">
+participant "${v:v0}"
+  # current scope
+
+participant "${v:/v0}"
+  # process scope
+
+participant "${v://v0}"
+  # engine scope (engine variable)
+</pre>
+<p>The slashes allow to jump to a higher scope. If you don&#8217;t prefix with any slash and the variable is not defined locally, it will look in higher scopes, up until the engine scope. Yes, local scopes may shadow other scopes.</p>
+<h4>current scope</h4>
+<p>The current scope has already been illustrated with the concurrent_iterator example above.</p>
+<h4>process scope (process level variables)</h4>
+<p>The process scope lets you set variables visible to all the branches in a process instance. Use with care, especially when setting. You might even want to avoid setting such &#8220;process level variables&#8221; from the process definition itself, consider them as read-only and set them when launching the process.</p>
+<p>Reminder, here is the #launch signature :</p>
+<pre class="brush: ruby">
+Ruote::Engine#launch(pdef, initial_workitem_fields={}, process_variables={})
+</pre>
+<p>Process variables set a launch time are in the <em>process scope</em> (aka process level variables).</p>
+<h4>engine scope (engine variables)</h4>
+<p>Like for the process scope, I&#8217;d suggest not setting those from process definitions, but only at engine/storage initialization. Then simply read them.</p>
+<p>Those &#8216;engine variables&#8217; make for wonderful global aliases, like in</p>
+<pre class="brush: ruby">
+engine.variables['run_audit'] = 'http://pdefs.examples.com/audit_5.rb'
+
+# ...
+
+pdef = Ruote.define 'my process' do
+  # ...
+  run_audit
+  # ...
+end
+</pre>
+<p>Since lower scopes may shadow the engine scope, you could divert the flow, with</p>
+<pre class="brush: ruby">
+engine.launch(
+  pdef,
+  { 'customer' =&gt; 'x' }, # fields
+  { 'run_audit' =&gt; 'http://pdefs.examples.com/audit_7./rb' }) # vars
+</pre>
+<h4>variables as aliases</h4>
+<p>Variables can be used to alias to participant names or subprocess names.</p>
+<pre class="brush: ruby">
+pdef = Ruote.process_definition do
+
+  set 'v:inspector' =&gt; 'user_alice'
+  set 'v:auditor' =&gt; 'user_bob'
+  set 'v:submit_report' =&gt; 'http://pdefs.example.com/report_x.rb'
+
+  cursor do
+    inspector :task =&gt; 'inspect'
+    auditor :task =&gt; 'final audit'
+    rewind :if =&gt; '${f:audited}'
+    submit_report
+  end
+end
+</pre>
+<p>In this example, the variables &#8216;inspector&#8217; and &#8216;auditor&#8217; contain the named of the participant &#8216;user_alice&#8217; and &#8216;user_bob&#8217; respectively. They are effectively aliases for those participants.</p>
+<p>The &#8216;submit_report&#8217; variable contains the <span class="caps">URI</span> of a subprocess.</p>
+<h4>engine variables</h4>
+<p>(see &#8216;engine scope&#8217; above)</p>
+<h3>workitem fields</h3>
+<p>Workitem fields compose the workitem payload. Workitem are handed to participants who take actions based on the workitem fields or modify them.</p>
+<p>A sequential workflow has a single workitem. As soon as a <a href="exp/concurrence.html">concurrence</a> or a <a href="exp/concurrent_iterator.html">concurrent-iterator</a> is met, the workitem will split in two or more. Only when the concurrence end will the fields merge.</p>
+<p>Workitem fields are accessed (read/write) from the process definitions and from the participants. It&#8217;s how participants communicate with the process and with other participants to the same process.</p>
+<h4>workitem params</h4>
+<p><span class="caps">TODO</span></p>
+<h4>trailing/temporary fields</h4>
+<p>Since ruote 2.3.0&#8230;</p>
+<p><span class="caps">TODO</span></p>
+<h3>recap table</h3>
+<table>
+	<tr>
+		<td> </td>
+		<th>process variables </th>
+		<th>workitem fields </th>
+	</tr>
+	<tr>
+		<th>where </th>
+		<td> engine bound </td>
+		<td> workitem bound </td>
+	</tr>
+	<tr>
+		<th>divisions </th>
+		<td> current/process/engine scope </td>
+		<td> regular fields / param fields / temporary fields </td>
+	</tr>
+	<tr>
+		<th></th>
+		<td> &#8230; </td>
+		<td> &#8230; </td>
+	</tr>
+</table>
+<h3>see also</h3>
+<ul>
+	<li><a href="dollar.html">dollar notation</a></li>
+	<li><a href="conditions.html">conditions</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id='footer'>
+<div id='footer-center'>
+<p>
+<span id='footer-left'>
+<a href='https://github.com/jmettraux/ruote_website/issues'>doc issue reporting</a>
+|
+<a href='https://github.com/jmettraux/ruote_website'>doc source</a>
+| created with
+<a href='http://nanoc.stoneship.org'>nanoc</a>
+and
+<a href='http://alexgorbatchev.com/SyntaxHighlighter/'>syntax highlighter</a>
+</span>
+<span id='footer-right'>
+&copy; 2005-2013 the ruote team
+</span>
+</p>
+</div>
+</div>
+<script>
+  SyntaxHighlighter.all();
+  
+  if (location.hostname != 'localhost' && location.hostname != '127.0.0.1') {
+  
+    // gauges
+  
+    var _gauges = _gauges || [];
+    (function() {
+      var t   = document.createElement('script');
+      t.type  = 'text/javascript';
+      t.async = true;
+      t.id    = 'gauges-tracker';
+      t.setAttribute('data-site-id', '50454d13f5a1f57e4200001b');
+      t.src = '//secure.gaug.es/track.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(t, s);
+    })();
+  
+    // ga
+  
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-138748-2']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  }
+</script>
+</body>
+</html>
