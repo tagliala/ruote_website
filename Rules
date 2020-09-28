@@ -41,4 +41,3 @@ end
 #layout '*', :haml, :format => :html5
 #layout '*', :erb
 layout '*', :haml
-

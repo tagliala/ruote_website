@@ -5,29 +5,29 @@
   %ul
     %li.head_item
       - if @head_item.title == 'expressions'
-        %a{ :href => '/documentation.html'}
+        %a{ :href => '/ruote_website/documentation.html'}
           Documentation
       - else
-        %a{ :href => '/' + @head_item.path.join('/') + '.html' }
+        %a{ :href => '/ruote_website' + @head_item.path }
           = @head_item.title
 
 - if @head_item && @head_item.title == 'expressions'
-  %h3{ :onclick => 'document.location = "/expressions.html"', :style => 'cursor: pointer' }
+  %h3{ :onclick => 'document.location = "/ruote_website/expressions.html"', :style => 'cursor: pointer' }
     Expressions
 - else
-  %h3{ :onclick => 'document.location = "/documentation.html"', :style => 'cursor: pointer' }
+  %h3{ :onclick => 'document.location = "/ruote_website/documentation.html"', :style => 'cursor: pointer' }
     Documentation
 %ul
   - @items.each do |item|
     %li{ :class => item == @item ? 'current' : nil }
-      %a{ :href => '/' + item.path.join('/') + '.html' }
+      %a{ :href => '/ruote_website' + item.path }
         = item[:side_title] || item.title
     - aliases = (item[:names] || []) - [ item.title ]
     - if aliases.size > 0
       %ul.alias
         - aliases.each do |al|
           %li
-            %a{ :href => '/' + item.path.join('/') + '.html' }
+            %a{ :href => '/ruote_website' + item.path }
               = al
 
 %h3
@@ -36,12 +36,12 @@
 
   - elts = []
   - elts << [ 'https://github.com/jmettraux/ruote/tree/master/quickstart', 'quickstart' ]
-  - elts << [ '/presentations.html', 'presentations' ]
-  - elts << [ '/resources.html', 'resources' ]
-  - elts << [ '/users.html', 'users' ]
+  - elts << [ '/ruote_website/presentations.html', 'presentations' ]
+  - elts << [ '/ruote_website/resources.html', 'resources' ]
+  - elts << [ '/ruote_website/users.html', 'users' ]
 
   - elts.each do |elt|
-    %li{ :class => elt.first == @item.identifier[0..-2] + '.html' ? 'current' : nil }
+    %li{ :class => elt.first == @item.identifier.to_s[0..-2] + '.html' ? 'current' : nil }
       %a{ :href => elt.first }
         = elt.last
 
@@ -50,16 +50,16 @@
 %ul.contact
 
   - elts = []
-  - elts << [ '/source.html', 'source' ]
-  - elts << [ '/download.html', 'download' ]
+  - elts << [ '/ruote_website/source.html', 'source' ]
+  - elts << [ '/ruote_website/download.html', 'download' ]
   - elts << [ 'http://jmettraux.github.com', 'blog' ]
-  - elts << [ '/lists.html', 'mailing list' ]
+  - elts << [ '/ruote_website/lists.html', 'mailing list' ]
   - elts << [ 'http://ruote-ci.s3.amazonaws.com/ci.html', 'continuous integration' ]
   - elts << [ 'http://ruote-irclogs.s3.amazonaws.com/logs.html', 'IRC' ]
   - elts << [ 'https://www.ohloh.net/p/ruote/', 'on ohloh' ]
 
   - elts.each do |elt|
-    %li{ :class => elt.first == @item.identifier[0..-2] + '.html' ? 'current' : nil }
+    %li{ :class => elt.first == @item.identifier.to_s[0..-2] + '.html' ? 'current' : nil }
       %a{ :href => elt.first }
         = elt.last
 
@@ -76,5 +76,4 @@
 :javascript
   function adjustSearch() {
     $('#q').val($('#qq').val() + ' site:http://ruote.rubyforge.org');
-  } 
-
+  }

@@ -1,40 +1,28 @@
-
 #
 # Re-opening the item class to add some methods.
 #
-class Nanoc3::Item
-
-  def path
-
-    path = self.identifier.split('/')
-    path.delete('')
-
-    path
-  end
+class Nanoc::Core::CompilationItemView
 
   def title
-
     t = self[:title]
-
-    return t.match(/^(.*) expression$/)[1] if self.path[0] == 'exp'
-
+    return t.match(/^(.*) expression$/)[1] if self.path.split('/')[1] == 'exp'
     t
   end
 end
 
 
-class SidebarFilter < Nanoc3::Filter
+class SidebarFilter < Nanoc::Filter
   identifier :sidebar
 
   def run (content, params)
 
-    items = if @item.path[0] == 'exp'
+    items = if @item.path.split('/')[1] == 'exp'
 
-      @items.select { |i| i.path[0] == 'exp' }
+      @items.select { |i| i.path.split('/')[1] == 'exp' }
 
-    elsif @item.path[0] == 'part'
+    elsif @item.path.split('/')[1] == 'part'
 
-      @items.select { |i| i.path[0] == 'part' }
+      @items.select { |i| i.path.split('/')[1] == 'part' }
 
     else
 
@@ -46,16 +34,16 @@ class SidebarFilter < Nanoc3::Filter
             lists users download source resources presentations
             documentation
           ]
-        ).include?(i.path[0])
+        ).include?(i.path.split('/')[1])
       }
     end
 
     items = items.sort_by { |i| i[:side_title] || i[:title] }
 
-    head_item = if @item.path[0] == 'exp'
-      @items.find { |i| i.path.join('/') == 'expressions' }
-    elsif @item.path[0] == 'part'
-      @items.find { |i| i.path.join('/') == 'participants' }
+    head_item = if @item.path.split('/')[1] == 'exp'
+      @items.find { |i| i.path == 'expressions' }
+    elsif @item.path.split('/')[1] == 'part'
+      @items.find { |i| i.path == 'participants' }
     else
       nil
     end
