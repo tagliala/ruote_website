@@ -2,3 +2,6 @@
 output
 tmp
 .bundle
+*.log
+.rvmrc
+.byebug_history

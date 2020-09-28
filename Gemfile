@@ -2,7 +2,7 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-gem 'nanoc'
+gem 'nanoc', '~> 3.8'
 gem 'RedCloth'
 gem 'haml'
 gem 'systemu'
