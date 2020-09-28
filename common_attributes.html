@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html><head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<title>ruote - common attributes</title>
+<script src='/ruote_website/js/shCore.js'></script>
+<script src='/ruote_website/js/shBrushXml.js'></script>
+<script src='/ruote_website/js/shBrushBash.js'></script>
+<script src='/ruote_website/js/shBrushRuby.js'></script>
+<script src='/ruote_website/js/shBrushJScript.js'></script>
+<!-- %script{ :src => "/js/jquery-1.6.1.min.js" } -->
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+<link href='/ruote_website/css/reset.css' rel='stylesheet' type='text/css'>
+<link href='/ruote_website/css/shCore.css' rel='stylesheet' type='text/css'>
+<link href='/ruote_website/css/shThemeRuote.css' rel='stylesheet' type='text/css'>
+<link href='/ruote_website/css/ruote.css' rel='stylesheet' type='text/css'>
+</head><body>
+<div id='container'>
+<div id='header'>
+<div id='header-center'>
+<div id='header-left'>
+<a href='/ruote_website'>
+<img src='/ruote_website/images/ruote.png'>
+</a>
+<div id='header-subtitle'>
+a ruby workflow engine
+</div>
+</div>
+<div id='header-right'>
+<div id='nav'>
+<span>
+<a href='/ruote_website/documentation.html' title='documentation'>
+doc
+</a>
+<a href='/ruote_website/source.html' title='source code'>
+source
+</a>
+<a href='/ruote_website/download.html' title='download'>
+download
+</a>
+<a class='nihongo' href='/ja.html' title='日本語'>
+日本語
+</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div id='content'>
+<div id='content-center'>
+<div id='sidebar'><h3 onclick='document.location = &quot;/documentation.html&quot;' style='cursor: pointer'>
+Documentation
+</h3>
+<ul>
+<li>
+<a href='/exp/add_branches.html'>
+add_branches expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/add_branches.html'>
+add_branches
+</a>
+</li>
+<li>
+<a href='/exp/add_branches.html'>
+add_branch
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/apply.html'>
+apply expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/apply.html'>
+apply
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/await.html'>
+await expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/await.html'>
+await
+</a>
+</li>
+</ul>
+<li>
+<a href='/part/block_participant.html'>
+block_participant
+</a>
+</li>
+<li>
+<a href='/exp/cancel_process.html'>
+cancel_process expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/cancel_process.html'>
+cancel_process
+</a>
+</li>
+<li>
+<a href='/exp/cancel_process.html'>
+terminate
+</a>
+</li>
+<li>
+<a href='/exp/cancel_process.html'>
+kill_process
+</a>
+</li>
+</ul>
+<li>
+<a href='/part/code_participant.html'>
+code_participant
+</a>
+</li>
+<li>
+<a href='/exp/command.html'>
+command expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/command.html'>
+skip
+</a>
+</li>
+<li>
+<a href='/exp/command.html'>
+back
+</a>
+</li>
+<li>
+<a href='/exp/command.html'>
+jump
+</a>
+</li>
+<li>
+<a href='/exp/command.html'>
+rewind
+</a>
+</li>
+<li>
+<a href='/exp/command.html'>
+continue
+</a>
+</li>
+<li>
+<a href='/exp/command.html'>
+break
+</a>
+</li>
+<li>
+<a href='/exp/command.html'>
+stop
+</a>
+</li>
+<li>
+<a href='/exp/command.html'>
+over
+</a>
+</li>
+<li>
+<a href='/exp/command.html'>
+reset
+</a>
+</li>
+</ul>
+<li class='current'>
+<a href='/common_attributes.html'>
+common attributes
+</a>
+</li>
+<li>
+<a href='/exp/concurrence.html'>
+concurrence expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/concurrence.html'>
+concurrence
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/concurrent_iterator.html'>
+concurrent_iterator expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/concurrent_iterator.html'>
+concurrent_iterator
+</a>
+</li>
+<li>
+<a href='/exp/concurrent_iterator.html'>
+citerator
+</a>
+</li>
+</ul>
+<li>
+<a href='/conditions.html'>
+conditions
+</a>
+</li>
+<li>
+<a href='/configuration.html'>
+configuration
+</a>
+</li>
+<li>
+<a href='/exp/cron.html'>
+cron expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/cron.html'>
+cron
+</a>
+</li>
+<li>
+<a href='/exp/cron.html'>
+every
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/cursor.html'>
+cursor expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/cursor.html'>
+cursor
+</a>
+</li>
+<li>
+<a href='/exp/cursor.html'>
+loop
+</a>
+</li>
+<li>
+<a href='/exp/cursor.html'>
+repeat
+</a>
+</li>
+</ul>
+<li>
+<a href='/part/decision_participant.html'>
+decision_participant
+</a>
+</li>
+<li>
+<a href='/exp/define.html'>
+define expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/define.html'>
+define
+</a>
+</li>
+<li>
+<a href='/exp/define.html'>
+process_definition
+</a>
+</li>
+<li>
+<a href='/exp/define.html'>
+workflow_definition
+</a>
+</li>
+</ul>
+<li>
+<a href='/documentation.html'>
+documentation
+</a>
+</li>
+<li>
+<a href='/dollar.html'>
+dollar notation
+</a>
+</li>
+<li>
+<a href='/download.html'>
+download
+</a>
+</li>
+<li>
+<a href='/exp/echo.html'>
+echo expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/echo.html'>
+echo
+</a>
+</li>
+</ul>
+<li>
+<a href='/part/engine_participant.html'>
+engine_participant
+</a>
+</li>
+<li>
+<a href='/exp/equals.html'>
+equals expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/equals.html'>
+equals
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/error.html'>
+error expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/error.html'>
+error
+</a>
+</li>
+</ul>
+<li>
+<a href='/expressions.html'>
+expressions
+</a>
+</li>
+<li>
+<a href='/exp/filter.html'>
+filter expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/filter.html'>
+filter
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/forget.html'>
+forget expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/forget.html'>
+forget
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/given.html'>
+given expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/given.html'>
+given
+</a>
+</li>
+</ul>
+<li>
+<a href='/glossary.html'>
+glossary
+</a>
+</li>
+<li>
+<a href='/exp/if.html'>
+if expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/if.html'>
+if
+</a>
+</li>
+</ul>
+<li>
+<a href='/implementing_a_storage.html'>
+implementing a storage
+</a>
+</li>
+<li>
+<a href='/implementing_participants.html'>
+implementing participants
+</a>
+</li>
+<li>
+<a href='/exp/inc.html'>
+inc expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/inc.html'>
+inc
+</a>
+</li>
+<li>
+<a href='/exp/inc.html'>
+dec
+</a>
+</li>
+<li>
+<a href='/exp/inc.html'>
+increment
+</a>
+</li>
+<li>
+<a href='/exp/inc.html'>
+decrement
+</a>
+</li>
+<li>
+<a href='/exp/inc.html'>
+push
+</a>
+</li>
+<li>
+<a href='/exp/inc.html'>
+pop
+</a>
+</li>
+</ul>
+<li>
+<a href='/'>
+index
+</a>
+</li>
+<li>
+<a href='/exp/iterator.html'>
+iterator expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/iterator.html'>
+iterator
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/let.html'>
+let expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/let.html'>
+let
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/listen.html'>
+listen expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/listen.html'>
+listen
+</a>
+</li>
+<li>
+<a href='/exp/listen.html'>
+receive
+</a>
+</li>
+<li>
+<a href='/exp/listen.html'>
+intercept
+</a>
+</li>
+</ul>
+<li>
+<a href='/lists.html'>
+lists
+</a>
+</li>
+<li>
+<a href='/part/local_participant.html'>
+local_participant
+</a>
+</li>
+<li>
+<a href='/exp/lose.html'>
+lose expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/lose.html'>
+lose
+</a>
+</li>
+</ul>
+<li>
+<a href='/part/no_op_participant.html'>
+no_op_participant
+</a>
+</li>
+<li>
+<a href='/noisy.html'>
+noisy output
+</a>
+</li>
+<li>
+<a href='/exp/noop.html'>
+noop expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/noop.html'>
+noop
+</a>
+</li>
+</ul>
+<li>
+<a href='/part/null_participant.html'>
+null_participant
+</a>
+</li>
+<li>
+<a href='/exp/on_error.html'>
+on_error expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/on_error.html'>
+on_error
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/once.html'>
+once expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/once.html'>
+once
+</a>
+</li>
+<li>
+<a href='/exp/once.html'>
+when
+</a>
+</li>
+<li>
+<a href='/exp/once.html'>
+as_soon_as
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/participant.html'>
+participant expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/participant.html'>
+participant
+</a>
+</li>
+</ul>
+<li>
+<a href='/part_implementations.html'>
+participant implementations
+</a>
+</li>
+<li>
+<a href='/presentations.html'>
+presentations
+</a>
+</li>
+<li>
+<a href='/process_administration.html'>
+process administration
+</a>
+</li>
+<li>
+<a href='/definitions.html'>
+process definitions
+</a>
+</li>
+<li>
+<a href='/process_observation.html'>
+process observation
+</a>
+</li>
+<li>
+<a href='/participants.html'>
+process participants
+</a>
+</li>
+<li>
+<a href='/exp/read.html'>
+read expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/read.html'>
+read
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/redo.html'>
+redo expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/redo.html'>
+redo
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/ref.html'>
+ref expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/ref.html'>
+ref
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/registerp.html'>
+registerp expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/registerp.html'>
+registerp
+</a>
+</li>
+</ul>
+<li>
+<a href='/rel.html'>
+rel values for ruote-http / ruote-kit links
+</a>
+</li>
+<li>
+<a href='/exp/reserve.html'>
+reserve expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/reserve.html'>
+reserve
+</a>
+</li>
+</ul>
+<li>
+<a href='/resources.html'>
+resources
+</a>
+</li>
+<li>
+<a href='/exp/restore.html'>
+restore expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/restore.html'>
+restore
+</a>
+</li>
+<li>
+<a href='/exp/restore.html'>
+set_fields
+</a>
+</li>
+</ul>
+<li>
+<a href='/part/rev_participant.html'>
+rev_participant
+</a>
+</li>
+<li>
+<a href='/users.html'>
+ruote users
+</a>
+</li>
+<li>
+<a href='/sample_workflow_run.html'>
+sample workflow run
+</a>
+</li>
+<li>
+<a href='/exp/save.html'>
+save expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/save.html'>
+save
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/sequence.html'>
+sequence expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/sequence.html'>
+sequence
+</a>
+</li>
+<li>
+<a href='/exp/sequence.html'>
+let
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/set.html'>
+set expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/set.html'>
+rset
+</a>
+</li>
+<li>
+<a href='/exp/set.html'>
+set
+</a>
+</li>
+<li>
+<a href='/exp/set.html'>
+unset
+</a>
+</li>
+</ul>
+<li>
+<a href='/part/smtp_participant.html'>
+smtp_participant
+</a>
+</li>
+<li>
+<a href='/source.html'>
+source
+</a>
+</li>
+<li>
+<a href='/exp/stall.html'>
+stall expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/stall.html'>
+stall
+</a>
+</li>
+</ul>
+<li>
+<a href='/part/storage_participant.html'>
+storage_participant
+</a>
+</li>
+<li>
+<a href='/exp/subprocess.html'>
+subprocess expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/subprocess.html'>
+subprocess
+</a>
+</li>
+</ul>
+<li>
+<a href='/testing_participants.html'>
+testing participants
+</a>
+</li>
+<li>
+<a href='/testing_processes.html'>
+testing processes
+</a>
+</li>
+<li>
+<a href='/exp/that.html'>
+that expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/that.html'>
+that
+</a>
+</li>
+<li>
+<a href='/exp/that.html'>
+of
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/undo.html'>
+undo expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/undo.html'>
+undo
+</a>
+</li>
+<li>
+<a href='/exp/undo.html'>
+cancel
+</a>
+</li>
+<li>
+<a href='/exp/undo.html'>
+kill
+</a>
+</li>
+</ul>
+<li>
+<a href='/exp/unregisterp.html'>
+unregisterp expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/unregisterp.html'>
+unregisterp
+</a>
+</li>
+</ul>
+<li>
+<a href='/vars_and_fields.html'>
+variables and fields
+</a>
+</li>
+<li>
+<a href='/exp/wait.html'>
+wait expression
+</a>
+</li>
+<ul class='alias'>
+<li>
+<a href='/exp/wait.html'>
+wait
+</a>
+</li>
+<li>
+<a href='/exp/wait.html'>
+sleep
+</a>
+</li>
+</ul>
+<li>
+<a href='/with_rails.html'>
+with rails
+</a>
+</li>
+<li>
+<a href='/patterns.html'>
+workflow control patterns
+</a>
+</li>
+<li>
+<a href='/ja.html'>
+日本語
+</a>
+</li>
+</ul>
+<h3>
+More
+</h3>
+<ul class='contact'>
+<li>
+<a href='https://github.com/jmettraux/ruote/tree/master/quickstart'>
+quickstart
+</a>
+</li>
+<li>
+<a href='/presentations.html'>
+presentations
+</a>
+</li>
+<li>
+<a href='/resources.html'>
+resources
+</a>
+</li>
+<li>
+<a href='/users.html'>
+users
+</a>
+</li>
+</ul>
+<h3>
+Meta
+</h3>
+<ul class='contact'>
+<li>
+<a href='/source.html'>
+source
+</a>
+</li>
+<li>
+<a href='/download.html'>
+download
+</a>
+</li>
+<li>
+<a href='http://jmettraux.github.com'>
+blog
+</a>
+</li>
+<li>
+<a href='/lists.html'>
+mailing list
+</a>
+</li>
+<li>
+<a href='http://ruote-ci.s3.amazonaws.com/ci.html'>
+continuous integration
+</a>
+</li>
+<li>
+<a href='http://ruote-irclogs.s3.amazonaws.com/logs.html'>
+IRC
+</a>
+</li>
+<li>
+<a href='https://www.ohloh.net/p/ruote/'>
+on ohloh
+</a>
+</li>
+</ul>
+<h3>
+<span>
+Search
+</span>
+</h3>
+<ul class='contact'>
+<li>
+<form action='http://www.google.com/search' method='GET'>
+<input id='qq' name='qq' style='' type='text'>
+<input id='q' name='q' type='hidden'>
+<input onclick='adjustSearch();' type='submit' value='search'>
+</form>
+</li>
+</ul>
+<script>
+  function adjustSearch() {
+    $('#q').val($('#qq').val() + ' site:http://ruote.rubyforge.org');
+  }
+</script>
+</div>
+<div id='content-main'>
+<h2>attributes common to all expressions</h2>
+<p>The attributes listed on this page may be used with any expression.</p>
+<ul>
+	<li><a href="#timeout">:timeout</a></li>
+	<li><a href="#if_unless">:if / :unless</a></li>
+	<li><a href="#forget">:forget</a></li>
+	<li><a href="#lose">:lose</a></li>
+	<li><a href="#flank">:flank</a></li>
+	<li><a href="#on_error">:on_error</a></li>
+	<li><a href="#on_cancel">:on_cancel</a></li>
+	<li><a href="#on_timeout">:on_timeout</a></li>
+	<li><a href="#tag">:tag</a></li>
+	<li><a href="#filter">:filter</a></li>
+	<li><a href="#take_and_discard">:take</a></li>
+	<li><a href="#take_and_discard">:discard</a></li>
+	<li><a href="#timers">:timers</a></li>
+	<li><a href="#scope">:scope</a></li>
+	<li><a href="#await">:await</a></li>
+</ul>
+<hr/>
+<h3 id="timeout">:timeout</h3>
+<p>If after two days, the two reviewers couldn&#8217;t do their work, the process instance will resume to the editor :</p>
+<pre class="brush: ruby">
+  sequence do
+    participant :ref =&gt; 'author'
+    sequence :timeout =&gt; '2d' do
+      participant :ref =&gt; 'reviewer1'
+      participant :ref =&gt; 'reviewer2'
+    end
+    participant :ref =&gt; 'editor'
+  end
+</pre>
+<p>:timeout understands h, m, d, s (respectively hour, minute, day, second). It also understands y, M, w (for year, Month and week), but they are rarely used.</p>
+<p>It&#8217;s OK to give an absolute date to the :timeout attribute :</p>
+<pre class="brush: ruby">
+  participant :ref =&gt; 'author', :timeout =&gt; 'Sun Jan 24 17:28:28 +0900 2010'
+</pre>
+<p>But most of the time absolute dates are fetched from process variables or workitem fields :</p>
+<pre class="brush: ruby">
+  participant :ref =&gt; 'author', :timeout =&gt; '${f:time_limit}'
+</pre>
+<p>Please note that <a href="exp/participant.html">participants</a> may have their say in their timeout.</p>
+<p>You might also have a look at the <a href="#on_timeout">:on_timeout</a> attribute.</p>
+<h3 id="if_unless">:if / :unless</h3>
+<p>These two attributes accept a condition string. If the condition evaluates to true (or false for :unless), the expression will get executed, else not.</p>
+<p>The <span class="caps">CEO</span> will receive a workitem / task only if the budget (stored in a workitem field) exceeds 23000 :</p>
+<pre class="brush: ruby">
+  concurrence do
+    participant 'ceo', :if =&gt; '${f:budget} &gt; 23000'
+    participant 'cfo'
+    participant '${f:bu_head}'
+  end
+</pre>
+<p>Any expression may use :if / :unless :</p>
+<pre class="brush: ruby">
+  cursor do
+    subprocess 'gather_data'
+    subprocess 'generate_graphs'
+    participant 'quality_control'
+    rewind :unless =&gt; '${f:sufficient_data}'
+    subprocess 'generate_pdfs'
+    # over
+  end
+</pre>
+<p>Really any :</p>
+<pre class="brush: ruby">
+  sequence do
+    sequence :if =&gt; '${f:weather} == rainy' do
+      rent_tent
+      rent_heating_system
+    end
+    concurrence do
+      sequence do
+        emit_invitations
+        gather_responses :timeout =&gt; '3w'
+      end
+      cursor :if =&gt; '${f:orchestra}' do
+        gather_orchestra
+        decide_about_orchestra
+        reserve_orchestra
+        rewind :if =&gt; '${f:orchestra_already_taken}'
+      end
+      participant 'mayor', :task =&gt; 'notification'
+    end
+  end
+</pre>
+<p>The :if and :unless conditions understand things like !=, ==, =~, &#8216;is set&#8217;, &#8216;is empty&#8217;, &amp;&amp;, ||, &#8230; More information in the <a href="conditions.html">conditions</a> page.</p>
+<h3 id="forget">:forget</h3>
+<p>This is the attribute equivalent of the <a href="exp/forget.html">forget</a> expression.</p>
+<p>An expression flagged with :forget =&gt; true or :forget =&gt; &#8216;true&#8217; gets forgotten, it is considered has having replied immediately to its parent expression, though its &#8216;execution&#8217; is resuming independently.</p>
+<pre class="brush: ruby">
+  concurrence do
+    participant 'alfred'
+    participant 'bob'
+    participant 'charly', :forget =&gt; true
+  end
+</pre>
+<p>Charly will receive a workitem, but the concurrence will receive a reply immediately, thus, the concurrence (and the rest of the process) will resume as soon as both Alfred and Bob have replied.</p>
+<p>It can be used for some kind of rough fire and forget concurrency :</p>
+<pre class="brush: ruby">
+  sequence do
+    participant 'alfred', :forget =&gt; true
+    participant 'bob', :forget =&gt; true
+    participant 'charly', :forget =&gt; true
+  end
+</pre>
+<h3 id="lose">:lose</h3>
+<p>This is the attribute equivalent of the <a href="exp/lose.html">lose</a> expression.</p>
+<pre class="brush: ruby">
+  Ruote.process_definition do
+    concurrence :count =&gt; 1 do
+      alfred
+      sequence :lose =&gt; true do
+        wait '2d'
+        send_reminder_to_alfred
+        wait '2h'
+        send_alarm_to_boss
+      end
+    end
+  end
+</pre>
+<p><a href="#timers">:timers</a> are probably a better way to express that business logic with ruote.</p>
+<h3 id="flank">:flank</h3>
+<p>(introduced in ruote 2.3.0)</p>
+<p>The previous &#8216;lose&#8217; example can be rewritten with &#8216;flank&#8217; as:</p>
+<pre class="brush: ruby">
+  Ruote.process_definition do
+    sequence do
+      sequence :flank =&gt; true do
+        wait '2d'
+        send_reminder_to_alfred
+        wait '2h'
+        send_alarm_to_boss
+      end
+      alfred
+    end
+  end
+</pre>
+<p>&#8216;Flanking&#8217; expressions will reply to their parent expression immediately (like :forget) but will still be cancellable (unlike :forget).</p>
+<p>Since they are cancellable, they won&#8217;t outlive their parent expressions. Thus</p>
+<pre class="brush: ruby">
+  Ruote.process_definition do
+    sequence do
+      bob :task =&gt; 'support work', :flank =&gt; true
+      alfred :task =&gt; 'main effort'
+    end
+  end
+</pre>
+<p>the support work of bob will terminate (get cancelled) as soon as alfred is done with his main effort.</p>
+<p>Granted, this could previously be done with &#8220;concurrence :count =&gt; 1&#8221; and &#8220;:lose =&gt; true&#8221;, but since &#8216;flanks&#8217; where introduced with <a href="#timers">timers</a>, the :flank attribute was introduced as well.</p>
+<p><a id="forget_lose_flank"></a>To sum up the difference between <strong>forget</strong>, <strong>lose</strong> and <strong>flank</strong>:</p>
+<table>
+	<tr>
+		<th>attribute / expression </th>
+		<th>replies to parent    </th>
+		<th>cancellable      </th>
+	</tr>
+	<tr>
+		<td>normal expression        </td>
+		<td>as soon as job is done </td>
+		<td>yes                </td>
+	</tr>
+	<tr>
+		<td><strong>forget</strong>                 </td>
+		<td>immediately            </td>
+		<td>no (not reachable) </td>
+	</tr>
+	<tr>
+		<td><strong>lose</strong>                   </td>
+		<td>never                  </td>
+		<td>yes                </td>
+	</tr>
+	<tr>
+		<td><strong>flank</strong>                  </td>
+		<td>immediately            </td>
+		<td>yes                </td>
+	</tr>
+</table>
+<h3 id="on_error">:on_error</h3>
+<p>By default, any error in a process instance gets logged and the segment of process where it occurred is stalled. It&#8217;s then possible to replay_at_error() the issue.</p>
+<p>What if you want to specify the &#8220;on error&#8221; behaviour directly in the process definition ?</p>
+<p>:on_error is the closest thing to the begin/rescue, try/catch found in regular programming languages.</p>
+<pre class="brush: ruby">
+Ruote.define :name =&gt; 'x' do
+
+  sequence :on_error =&gt; 'handle_issue' do
+    participant 'alpha'
+    cursor do
+      # ...
+    end
+  end
+
+  define 'handle_issue' do
+    participant 'supervisor', :msg =&gt; 'process ${wfid} has gone ballistic'
+  end
+end
+</pre>
+<p>If there is an error (at any level/depth) inside of our sequence, the whole branch of the &#8220;sequence&#8221; will get cancelled and then replaced by the element indicated in :on_error.</p>
+<p>There will be no error registered in the error journal (unless there is an error in the handling participant/subprocess itself).</p>
+<p>:on_error must point to a subprocess or a participant, or a command like &#8220;redo&#8221;, &#8220;undo&#8221;, &#8220;cancel&#8221;, &#8230; See below.</p>
+<p>When it points to a subprocess, the branch in error gets replaced by an instance of that subprocess. When it points to a participant branch gets replaced by a single workitem despatchement to the participant.</p>
+<p>Before running the subprocess or participant that is meant to handle the error, ruote places the error in a workitem field named &#8220;__error__&#8221;. The value of the field is a hash describing the error, with keys, like &#8220;fei&#8221;, &#8220;at&#8221;, &#8220;class&#8221;, &#8220;message&#8221;, &#8220;trace&#8221;, etc.</p>
+<p>Ruote 2.3.0 introduces a dedicated &#8220;on_error&#8221; expression that gives some pattern matching ability to on_error. See <a href="exp/on_error.html">on_error</a> expression.</p>
+<h4 id="on_error_composing">composing with on_error (on_error: &#8220;retry * 3, pass&#8221;)</h4>
+<p>Since ruote 2.3.0, the on_error attribute understands handler composition. One can write things like:</p>
+<pre class="brush: ruby">
+  # retry three times, immediately
+  handover_a :on_error =&gt; "retry * 3"
+
+  # retry three times, then give up
+  handover_b :on_error =&gt; "retry * 3, pass"
+
+  # retry three times, each time after 1 minute, then give up
+  handover_c :on_error =&gt; "1m: retry * 3, pass"
+
+  # retry after 1 second, 1 minute, finally one hour
+  handover_d :on_error =&gt; "1s: retry, 1m: retry, 1h: retry"
+</pre>
+<p>Now, on for the list of messages on_error understands.</p>
+<h4>on_error: redo</h4>
+<p>If :redo or &#8216;redo&#8217; is given, the process branch will get cancelled and retried :</p>
+<pre class="brush: ruby">
+  sequence :on_error =&gt; :redo do
+    # ...
+  end
+</pre>
+<p>&#8216;retry&#8217; may be used instead of &#8216;redo&#8217;.</p>
+<h4>on_error: undo</h4>
+<p>If :undo or &#8216;undo&#8217; is passed, the branch will get cancelled and the flow will resume :</p>
+<pre class="brush: ruby">
+  sequence do
+    participant 'notify_bu', :on_error =&gt; :undo
+      # we don't care if the notification fails
+    participant 'bu_head'
+      # business as usual
+  end
+</pre>
+<p>&#8216;pass&#8217; may be used instead of &#8216;undo&#8217;.</p>
+<h4>on_error: retry, pass</h4>
+<p>&#8216;retry&#8217; / :retry and &#8216;pass&#8217; / :pass are aliases for &#8216;redo&#8217; and &#8216;undo&#8217; respectively.</p>
+<pre class="brush: ruby">
+  sequence do
+    participant 'notify_bu', :on_error =&gt; :pass
+      # we don't care if the notification fails
+    participant 'bu_head', :on_error =&gt; :retry
+      # retry until no error
+  end
+</pre>
+<p>The <a href="exp/listen.html">listen</a> expression may also listen to errors (from ruote 2.3.0 on).</p>
+<p>If you want to register finer grained error interception, you might be want to have a look at the <a href="exp/on_error.html">on_error</a> expression (from ruote 2.3.0 on).</p>
+<h4>on_error: cancel</h4>
+<p>By specifying &#8216;cancel&#8217;, one can tell ruote to trigger the on_cancel handler in case of error.</p>
+<pre class="brush: ruby">
+  cursor :on_cancel =&gt; 'decommission', :on_error =&gt; 'cancel' do
+    # ...
+  end
+</pre>
+<p>That piece of process will call the participant (or subprocess) &#8220;decommission&#8221; when cancelled and also when encountering an error.</p>
+<h4>on_error: cando</h4>
+<p>&#8216;cando&#8217; is &#8220;cancel-redo&#8221; collapsed. The :on_cancel is triggered (can__) then the faulty expression (tree) is retried (__do).</p>
+<pre class="brush: ruby">
+  cursor :on_cancel =&gt; 'decommission', :on_error =&gt; 'cando' do
+    # ...
+  end
+</pre>
+<p>If there is no :on_cancel present, &#8216;cando&#8217; behaves like a &#8216;redo&#8217;.</p>
+<h4>on_error: cursor commands</h4>
+<p>From ruote 2.3.0 on, the on_error attribute accepts the same command as a cursor (in fact, it&#8217;s best used with a cursor).</p>
+<pre class="brush: ruby">
+  cursor :on_error =&gt; 'rewind' do
+    # the cursor will rewind by itself if there is an error in its steps
+    step_one
+    step_two
+    step_three
+  end
+</pre>
+<p>or</p>
+<pre class="brush: ruby">
+  cursor :on_error =&gt; 'jump to final_step' do
+    # the cursor will jump to the final_step in case of error
+    # (it'd be better if the final step itself weren't the source of the error)
+    step_one
+    step_two
+    step_three
+    final_step
+  end
+</pre>
+<p>All the cursor commands are valid. Read the description of the <a href="exp/cursor.html">cursor</a> expression for more information.</p>
+<h4>on_error: store:x</h4>
+<p>(since ruote 2.3.1)</p>
+<p>This on_error directive let&#8217;s the error segment cancel itself and then stores the error in the given workfitem field or process variable.</p>
+<pre class="brush: ruby">
+  sequence :on_error =&gt; 'store: x' do
+    # ...
+  end
+</pre>
+<p>It can be used in conjunction with the &#8220;error :re =&gt; &#8216;$f:x&#8217;&#8221; to reraise the error later on. Or simply with an :if to run certain code if an error was encountered previously.</p>
+<pre class="brush: ruby">
+  do_this :on_error =&gt; 'store: x'
+    # store error in workitem field "x"
+
+  do_this :on_error =&gt; 'store: f:x'
+    # store error in workitem field "x"
+
+  do_this :on_error =&gt; 'store: v:y'
+    # store error in process variable "y"
+</pre>
+<p>&#8220;bury&#8221; can be used instead of &#8220;store&#8221;.</p>
+<h3 id="on_cancel">:on_cancel</h3>
+<p>on_cancel is used to point at a subprocess or a participant that should be invoked / receive a workitem in case a [segment of a] process gets cancelled.</p>
+<pre class="brush: ruby">
+pdef = Ruote.process_definition :name =&gt; 'aircraft carrier' do
+  cursor :on_cancel =&gt; 'decommission' do
+    concurrence do
+      participant 'naval team', :task =&gt; 'operate ship'
+      participant 'air team', :task =&gt; 'operate planes'
+    end
+  end
+  define 'decommission' do
+    concurrence do
+      participant 'naval team', :task =&gt; 'decom weapons'
+      participant 'air team', :task =&gt; 'decom aircrafts'
+    end
+  end
+end
+</pre>
+<p>In this process, the aircraft is operated. Upon cancelling, the subprocess &#8216;decommission&#8217; is triggered, where the teams get different missions.</p>
+<p>Note that, unlike :on_error, when an expression inside an :on_cancel enabled expression is cancelled, that will not trigger the :on_cancel. For example, if the &#8216;operate planes&#8217; activity is cancelled, that will not trigger &#8216;decommission&#8217;. The trigger will occur if the cursor or the whole process instance is cancelled.</p>
+<p>(note as well that when a process get killed, its on_cancel attributes will not trigger)</p>
+<h3 id="on_timeout">:on_timeout</h3>
+<p>On top of this page figures the description of the <a href="#timeout">:timeout</a> attribute. The :on_timeout attribute is a complement. It indicates what to do (participant or subprocess) when the timeout does trigger.</p>
+<p>Apart from the name of a subprocess or a participant, :on_timeout can also take the &#8216;redo&#8217; or the &#8216;error&#8217; value.</p>
+<p>The &#8216;redo&#8217; value indicates that on timeout, the flagged expression should get cancelled (along with any children it may have) and be re-applied.</p>
+<p>The &#8216;error&#8217; value forces the process into error upon timeout (whereas the default timeout behaviour is to resume the flow). A process segment in error is blocked and requires an admin interventation (see <a href="process_administration.html">process administration</a>).</p>
+<pre class="brush: ruby">
+  sequence do
+    participant 'author'
+    participant 'reviewer', :timeout =&gt; '3d', :on_timeout =&gt; 'redo'
+    participant 'editor'
+  end
+</pre>
+<p>In this example, the reviewer will receive a fresh workitem every 3 days, until he replies by himself to the flow (which will resume to the editor participant).</p>
+<p>(ruote 2.3.0 on) The :on_timeout attribute accepts the same pre-defined handlers as the :on_error attribute, &#8220;jump&#8221;, &#8220;rewind&#8221;, &#8220;undo&#8221;, &#8220;pass&#8221;, &#8230;</p>
+<p>(ruote 2.3.0 on) The :on_timeout attribute accepts &#8220;cancel&#8221; and &#8220;cando&#8221; values like the :on_error attribute does.</p>
+<h3 id="tag">:tag</h3>
+<p>The tag attribute is used to tag a segment of a process.</p>
+<pre class="brush: ruby">
+Ruote.process_definition do
+  sequence do
+    sequence :tag =&gt; 'phase 1' do
+      alice
+      bob
+    end
+    sequence :tag =&gt; 'phase 2' do
+      charly
+      david
+    end
+  end
+end
+</pre>
+<p>These tags then appear in the process variables :</p>
+<pre class="brush: ruby">
+p engine.process(wfid).tags.keys
+  # =&gt; [ "phase 1" ]
+</pre>
+<p>In this way, :tag can be used to flag large segments of process instances. Eras, phases, chapter, &#8230; Name it how you want.</p>
+<p>(ruote 2.1.12 will probably add a tags field to its workitems, that keeps track of the currently seen tags)</p>
+<p>The :tag is used as well by the <a href="exp/redo.html">_redo</a> and the <a href="exp/undo.html">undo</a> (cancel) expression.</p>
+<p>The <a href="exp/cursor.html">cursor / repeat</a> expressions can be tagged too, when the cursor/loop has to be manipulated from outside (of the cursor/loop).</p>
+<h3 id="filter">:filter</h3>
+<p>Ruote 2.2.0 introduces a :filter attribute for expressions.</p>
+<p>Most of the documentation for this attribute is found in the doc for the <a href="exp/filter.html">filter</a> expression. Note however, that the filter expression in one way, while the attribute version is two-sided, &#8216;in&#8217; and &#8216;out&#8217; (reaching the expression, leaving it).</p>
+<pre class="brush: ruby">
+Ruote.process_definition do
+
+  set 'v:f' =&gt; {
+    :in =&gt; [
+      { :fields =&gt; '/^private_/', :remove =&gt; true }
+    ],
+    :out =&gt; [
+      { :fields =&gt; '/^private_/', :restore =&gt; true },
+      { :fields =&gt; '/^protected_/', :restore =&gt; true },
+    ]
+  }
+
+  alpha
+  sequence :filter =&gt; 'f' do
+    bravo
+    charly
+  end
+  delta
+end
+</pre>
+<p>In this example, the filter is placed in the variable named &#8216;f&#8217;. When the sequence after alpha is entered, the workitem fields whose name starts with &#8220;private_&#8221; are removed, bravo and charly can&#8217;t see them.</p>
+<p>Once charly is done, the sequence terminates and the private fields are restored (like they were when reaching the bravo-charly sequence. The fields starting with &#8216;protected_&#8217; are restored too, potentially overwriting changes made by bravo or charly.</p>
+<p>There are different ways to pass filters.</p>
+<pre class="brush: ruby">
+Ruote.process_definition do
+
+  # directly
+
+  alpha :filter =&gt; {
+    :in =&gt; [
+      { :fields =&gt; '/^private_/', :remove =&gt; true }
+    ],
+    :out =&gt; [
+      { :fields =&gt; '/^private_/', :restore =&gt; true },
+      { :fields =&gt; '/^protected_/', :restore =&gt; true },
+    ]
+  }
+
+  # via a variable
+
+  alpha :filter =&gt; 'f'
+
+  # via two variables
+
+  alpha :filter =&gt; { :in =&gt; 'f0', :out =&gt; 'f1' }
+
+  # as a participant
+
+  alpha :filter =&gt; 'p'
+
+  # as two participants
+
+  alpha :filter =&gt; { :in =&gt; 'p0', :out =&gt; 'p1' }
+end
+</pre>
+<p>The format for filters passed directly or via variables as arrays is detailed for the <a href="exp/filter.html">filter</a> expression. The &#8216;restore&#8217; filter operation is particulary useful in the case of an &#8216;out&#8217; (&#8216;reply&#8217;) filter attribute.</p>
+<p>Participants are registered in the engine like any other participant. There consume method is not expected to reply_to_engine(workitem)</p>
+<pre class="brush: ruby">
+class MyFilterParticipant
+  def consume(workitem)
+    return if workitem.fields['__filter_direction__'] == 'out'
+      # only filter when filter on 'out' ('reply') (vs 'in'/'apply')
+    workitem.fields.keys.each do |k|
+      workitem.fields.delete(k) if k.match(/^private_/)
+    end
+  end
+end
+
+engine.register_participant 'filter0', MyFilterParticipant
+
+# ...
+
+pdef = Ruote.process_definition do
+  alpha :filter =&gt; 'filter0'
+end
+</pre>
+<p>The :filter attribute will favour the &#8216;filter&#8217; method of the participant, if it has one. This method, unlike consume, will be expected to return the updated field hash (and it doesn&#8217;t receive the workitem, but the field hash directly).</p>
+<pre class="brush: ruby">
+class MyFilterParticipant
+  def filter(fields, direction)
+    return fields if direction == 'out'
+    fields.select { |k, v| ! k.match(/^private/) } # ruby 1.9.x !!!
+  end
+end
+</pre>
+<h3 id="take_and_discard">:take and :discard</h3>
+<p>These two attribute influence what workitem fields are carried from the expression they adorn.</p>
+<p>They can be used to constrain the output of a segment of process.</p>
+<p>:take acts as a whitelist:</p>
+<pre class="brush: ruby">
+  alpha :take =&gt; 'a'
+    # if the alpha participant or subprocess set any field in the workitem
+    # it was given, only the field named "a" will be kept
+
+  alpha :take =&gt; /^a/
+    # regular expressions are OK
+
+  alpha :take =&gt; [ 'a', /^b/ ]
+    # arrays are OK too
+</pre>
+<p>:discard acts as a blacklist:</p>
+<pre class="brush: ruby">
+  bravo :discard =&gt; [ 'a', /^b/ ]
+    # the field "a" and any field beginning with a "b" will get discarded
+</pre>
+<p>:discard =&gt; true discards any field set by the adorned expression:</p>
+<pre class="brush: ruby">
+  bravo :discard =&gt; true
+</pre>
+<p>Can be useful to somehow silent a segment of process.</p>
+<h3 id="timers">:timers</h3>
+<p>(introduced in ruote 2.3.0)</p>
+<p>&#8220;alice receives a task, she has 15 days to do it, she&#8217;ll have to receive a reminder after 5 days and a final reminder after 12 days&#8221; can be conveyed as</p>
+<pre class="brush: ruby">
+Ruote.define do
+  # ...
+  alice :timers =&gt; '5d: reminder, 12d: final_reminder, 15d: timeout'
+  # ...
+end
+</pre>
+<p>The pattern is &#8220;duration0: x, duration1: y, &#8230;, durationN: z&#8221;.</p>
+<p>The &#8220;action&#8221; can be a participant name, a subprocess name or one of a set of keywords.</p>
+<p>Those keywords are</p>
+<ul>
+	<li>timeout : simply times out</li>
+</ul>
+<pre class="brush: ruby">
+alice :timers =&gt; '1h: timeout'
+  # is equivalent to
+alice :timeout =&gt; '1h'
+</pre>
+<ul>
+	<li>error : after the given time, the expression is forced into an error</li>
+</ul>
+<pre class="brush: ruby">
+alice :timers =&gt; '1h: reminder, 12h: error'
+</pre>
+<p>What follows the &#8220;error&#8221; and precedes the end of the string or the next &#8220;,&#8221; (comma) is taken as the &#8216;error message&#8217;</p>
+<pre class="brush: ruby">
+alice :timers =&gt; '1h: reminder, 12h: error it went wrong'
+</pre>
+<ul>
+	<li>undo, pass</li>
+</ul>
+<p>To forget alice and pass to bravo after 12 hours:</p>
+<pre class="brush: ruby">
+sequence do
+  alice :timers =&gt; '1h: reminder, 12h: undo'
+  bravo
+end
+</pre>
+<ul>
+	<li>redo, retry</li>
+</ul>
+<p>To force a re-application of an expression after a certain time:</p>
+<pre class="brush: ruby">
+alice :timers =&gt; '12h: redo'
+  # which is equivalent to
+alice :timeout =&gt; '12h', :on_timeout =&gt; 'redo'
+</pre>
+<ul>
+	<li>skip, back, jump, rewind, continue, break, stop, over, reset</li>
+</ul>
+<p>Those &#8220;commands&#8221; are understood as well (warning, they only apply if you are inside of a &#8216;cursor&#8217; expression).</p>
+<p>After twelve hours and no reply from alice, the flow will jump to participant charly (over participant bravo):</p>
+<pre class="brush: ruby">
+cursor do
+  alice :timers =&gt; '12h: jump charly'
+  bravo
+  charly
+end
+</pre>
+<p>Note that sub-processes and participants that are triggered by :timers are &#8220;flanking&#8221;. When the expression holding the timers ends, they get cancelled (they don&#8217;t outlive the expression for which they are &#8216;timers&#8217;).</p>
+<h3 id="scope">:scope</h3>
+<p>(introduced in ruote 2.3.0)</p>
+<p>By default expressions inside of a workflow instance share the same variable scope. By setting the attribute :scope to &#8220;true&#8221;, a new variable scope is forced.</p>
+<pre class="brush: ruby">
+define 'flow' do
+  set 'v:v' =&gt; 'alice'
+  sequence :scope =&gt; true do
+    set 'v:v' =&gt; 'bob'
+    participant '${v:x}' # will deliver to bob
+  end
+  participant '${v:x}' # will deliver to alice
+end
+</pre>
+<p>(This example can be reproduced by replacing &#8220;sequence :scope =&gt; true&#8221; by &#8220;let&#8221; which is a special alias of the sequence expression).</p>
+<h3 id="await">:await</h3>
+<p>(introduced in ruote 2.3.1)</p>
+<p>The await attribute was added to ruote in order to help model directed graphs.</p>
+<p>Imagine a case where you need to represent a graph of tasks where A and B execute concurrently, C executes as soon as A and B are over and D executes as soon as B is over.</p>
+<p>With the <a href="/exp/await.html">await</a> expression, this can be done as:</p>
+<pre class="brush: ruby">
+concurrence do
+  sequence :tag =&gt; 'ab' do
+    a
+    b :tag =&gt; 'b'
+  end
+  sequence do
+    await :left_tag =&gt; 'ab'
+    c
+  end
+  sequence do
+    await :left_tag =&gt; 'b'
+    d
+  end
+end
+</pre>
+<p>This relies on the blocking behaviour of <a href="/exp/await.html">await</a> when it has no nested expressions.</p>
+<p>The :await attribute was introduced to simplify the notation above. The flow becomes:</p>
+<pre class="brush: ruby">
+concurrence do
+  sequence :tag =&gt; 'ab' do
+    a
+    b :tag =&gt; 'b'
+  end
+  sequence :await =&gt; 'left_tag:ab' do
+    c
+  end
+  sequence :await =&gt; 'left_tag:b' do
+    d
+  end
+end
+</pre>
+<p>The sequences are made to wait for the event to happen before resuming.</p>
+<p>The :await attribute understands the same language as the <a href="/exp/await.html">await</a> expression, although it compacts it into something like &#8220;left_tag:ab&#8221;.</p>
+<p>When given no prefix, the await attribute will consider the value as &#8220;left_tag:&#8221; thus, the above flow can be rewritten as:</p>
+<pre class="brush: ruby">
+concurrence do
+  sequence :tag =&gt; 'ab' do
+    a
+    b :tag =&gt; 'b'
+  end
+  sequence :await =&gt; 'ab' do
+    c
+  end
+  sequence :await =&gt; 'b' do
+    d
+  end
+end
+</pre>
+<p>or, since await applies to any expression, it can be shortened to:</p>
+<pre class="brush: ruby">
+concurrence do
+  sequence :tag =&gt; 'ab' do
+    a
+    b :tag =&gt; 'b'
+  end
+  c :await =&gt; 'ab'
+  d :await =&gt; 'b'
+end
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id='footer'>
+<div id='footer-center'>
+<p>
+<span id='footer-left'>
+<a href='https://github.com/jmettraux/ruote_website/issues'>doc issue reporting</a>
+|
+<a href='https://github.com/jmettraux/ruote_website'>doc source</a>
+| created with
+<a href='http://nanoc.stoneship.org'>nanoc</a>
+and
+<a href='http://alexgorbatchev.com/SyntaxHighlighter/'>syntax highlighter</a>
+</span>
+<span id='footer-right'>
+&copy; 2005-2013 the ruote team
+</span>
+</p>
+</div>
+</div>
+<script>
+  SyntaxHighlighter.all();
+</script>
+</body>
+</html>
